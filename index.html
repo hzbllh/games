@@ -7,28 +7,59 @@
   <style>
     body {
       font-family: sans-serif;
-      background-color: #f2f2f2;
+      background-color: #f9f9f9;
+      padding: 20px;
       text-align: center;
-      padding: 30px;
     }
     h1 {
-      color: #ff6f00;
+      color: #f57c00;
+      margin-bottom: 10px;
     }
-    .info {
-      background: white;
-      padding: 20px;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .gallery img {
+      max-width: 100%;
       border-radius: 10px;
-      display: inline-block;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .caption {
+      font-size: 14px;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
-  <h1>Selamat Datang ke Dunia Si Senget!</h1>
-  <div class="info">
-    <p><strong>Si Senget</strong> ialah seekor itik kartun yang memakai topi keledar.</p>
-    <p>Dia suka berpetualang, kadang-kadang senget kepala sebab terlalu banyak idea pelik.</p>
-    <p>Follow kisah dia di laman ni!</p>
+  <h1>Si Senget: Galeri</h1>
+  <p>Berikut ialah koleksi gambar-gambar Si Senget dalam pelbagai gaya!</p>
+  <div class="gallery">
+    <div>
+      <img src="https://i.imgur.com/TOR2YzK.png" alt="Si Senget 1" />
+      <div class="caption">Si Senget senget betul</div>
+    </div>
+    <div>
+      <img src="https://i.imgur.com/kKbfVEX.png" alt="Si Senget 2" />
+      <div class="caption">Helmet merah power</div>
+    </div>
+    <div>
+      <img src="https://i.imgur.com/hF3MRVP.png" alt="Si Senget 3" />
+      <div class="caption">Pandangan sisi</div>
+    </div>
+    <div>
+      <img src="https://i.imgur.com/m8p1e7A.png" alt="Si Senget 4" />
+      <div class="caption">Mood chill</div>
+    </div>
+    <div>
+      <img src="https://i.imgur.com/1LSsMrq.png" alt="Si Senget 5" />
+      <div class="caption">Gaya comel</div>
+    </div>
+    <div>
+      <img src="https://i.imgur.com/9E7uXzF.png" alt="Si Senget 6" />
+      <div class="caption">Versi mini</div>
+    </div>
   </div>
 </body>
 </html>
