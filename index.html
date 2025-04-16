@@ -1,66 +1,55 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Si Senget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Quzie!</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #f0f0f0;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      color: #333;
       text-align: center;
     }
+
+    .container {
+      padding: 50px 20px;
+    }
+
     h1 {
-      color: #f57c00;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    .heart {
+      font-size: 3rem;
+      color: red;
+      animation: pulse 1s infinite;
+    }
+
+    .from {
       margin-top: 30px;
+      font-size: 1.2rem;
+      font-style: italic;
     }
-    .gallery img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
     }
-    .caption {
-      font-size: 14px;
-      margin-top: 5px;
+
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>Si Senget: Galeri</h1>
-  <p>Koleksi rasmi Si Senget — dari senget biasa ke senget luar biasa!</p>
-
-  <div class="gallery">
-    <div>
-      <img src="https://raw.githubusercontent.com/hzbllh/senget/main/Senget1.png" alt="Si Senget 1">
-      <div class="caption">Si Senget 1</div>
-    </div>
-    <div>
-      <img src="https://raw.githubusercontent.com/hzbllh/senget/main/Senget2.png" alt="Si Senget 2">
-      <div class="caption">Si Senget 2</div>
-    </div>
-    <div>
-      <img src="https://raw.githubusercontent.com/hzbllh/senget/main/Senget3.png" alt="Si Senget 3">
-      <div class="caption">Si Senget 3</div>
-    </div>
-    <div>
-      <img src="https://raw.githubusercontent.com/hzbllh/senget/main/Senget4.png" alt="Si Senget 4">
-      <div class="caption">Si Senget 4</div>
-    </div>
-    <div>
-      <img src="https://raw.githubusercontent.com/hzbllh/senget/main/Senget5.png" alt="Si Senget 5">
-      <div class="caption">Si Senget 5</div>
-    </div>
-    <div>
-      <img src="https://raw.githubusercontent.com/hzbllh/senget/main/Senget6.png" alt="Si Senget 6">
-      <div class="caption">Si Senget 6</div>
-    </div>
-  </div>
-</body>
-</html>
+  <div class="container">
+    <h1>Happy Birthday, Quzie
