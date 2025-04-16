@@ -1,55 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Quzie!</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      color: #333;
-      text-align: center;
-    }
-
-    .container {
-      padding: 50px 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.5rem;
-    }
-
-    .heart {
-      font-size: 3rem;
-      color: red;
-      animation: pulse 1s infinite;
-    }
-
-    .from {
-      margin-top: 30px;
-      font-size: 1.2rem;
-      font-style: italic;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-
-    audio {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang ke Kedai H</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .produk {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .produk div {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            background-color: white;
+            text-align: center;
+        }
+        .produk img {
+            width: 100%;
+            height: auto;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Happy Birthday, Quzie
+
+<header>
+    <h1>Selamat Datang ke Kedai H</h1>
+</header>
+
+<div class="container">
+    <p>Di Kedai H, kami menawarkan pelbagai produk Naruto yang berkualiti tinggi. Lihat koleksi kami dan dapatkan produk kegemaran anda hari ini!</p>
+    
+    <div class="produk">
+        <div>
+            <img src="https://example.com/naruto-product1.jpg" alt="Produk Naruto 1">
+            <h3>Patung Naruto</h3>
+            <p>Harga: RM50</p>
+        </div>
+        <div>
+            <img src="https://example.com/naruto-product2.jpg" alt="Produk Naruto 2">
+            <h3>Aksesori Naruto</h3>
+            <p>Harga: RM30</p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/60123456789" class="whatsapp-btn">Hubungi Kami di WhatsApp</a>
+</div>
+
+<footer>
+    <p>&copy; 2025 Kedai H. Semua hak cipta terpelihara.</p>
+</footer>
+
+</body>
+</html>
