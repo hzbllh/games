@@ -1,144 +1,135 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Nama Awak] - Portfolio Peribadi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>H - Pricelist Diamond MLBB</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            color: #333;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            background-color: #0a1a2e;
+            color: #fff;
+            margin: 0;
             padding: 20px;
-        }
-        header {
             text-align: center;
-            padding: 80px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        header img {
-            border-radius: 50%;
-            width: 150px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        header img:hover {
-            transform: scale(1.1);
-        }
+
         header h1 {
-            font-size: 2.5em;
-            font-weight: 600;
-            color: #2c3e50;
+            font-size: 3em;
+            color: #ffd700;
+            margin: 0;
         }
+
+        header h2 {
+            font-size: 2em;
+            color: #fff;
+            margin: 10px 0;
+        }
+
         header p {
             font-size: 1.2em;
-            color: #7f8c8d;
+            color: #ccc;
         }
-        section {
-            padding: 40px 20px;
-            background: #fff;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1s ease-in;
+
+        .pricelist, .additional, .info {
+            margin: 20px 0;
         }
-        section h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 10px;
-            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .skills-list span {
-            background: #3498db;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            transition: background 0.3s ease;
+
+        .item {
+            background-color: #1e2a44;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1em;
+            border: 1px solid #ffd700;
         }
-        .skills-list span:hover {
-            background: #2980b9;
+
+        .item span:first-child {
+            font-weight: bold;
         }
-        .contact a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background: #2c3e50;
-            color: #fff;
+
+        .item span:last-child {
+            color: #ffd700;
+        }
+
+        .additional h3 {
+            font-size: 1.5em;
+            color: #ffd700;
+        }
+
+        .info p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        footer p {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #ffd700;
             text-decoration: none;
-            border-radius: 25px;
-            transition: background 0.3s ease;
         }
-        .contact a:hover {
-            background: #34495e;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8em; }
-            header p { font-size: 1em; }
-            section h2 { font-size: 1.5em; }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="gambar-anda.jpg" alt="Gambar Saya">
-            <h1>[Nama Awak]</h1>
-            <p>Pereka Grafik | Pembangun Laman Web | Peminat Teknologi</p>
-        </header>
-        <section id="tentang">
-            <h2>Tentang Saya</h2>
-            <p>Selamat datang! Saya [Nama Awak], seorang [pekerjaan/minat, contoh: pelajar di UTM yang bersemangat tentang reka bentuk dan pembangunan laman web]. Saya suka mencipta sesuatu yang indah dan berfungsi. Di waktu lapang, saya gemar [hobi, contoh: minum kopi dan meneroka teknologi baharu].</p>
-        </section>
-        <section id="kemahiran">
-            <h2>Kemahiran Saya</h2>
-            <div class="skills-list">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Photoshop</span>
-                <span>Figma</span>
-            </div>
-        </section>
-        <section id="hubungi" class="contact">
-            <h2>Hubungi Saya</h2>
-            <p>Ingin bekerjasama atau sekadar berbual? Hubungi saya!</p>
-            <a href="mailto:emailanda@example.com">E-mel Saya</a>
-            <a href="https://www.instagram.com/namaanda">Instagram</a>
-            <a href="https://www.linkedin.com/in/namaanda">LinkedIn</a>
-        </section>
-    </div>
+    <header>
+        <h1>H</h1>
+        <h2>Pricelist Diamond MLBB</h2>
+        <p>Malaysia (Via ID & Server)</p>
+    </header>
+    
+    <section class="pricelist">
+        <div class="grid">
+            <div class="item"><span>140 Diamonds</span><span>RM 9</span></div>
+            <div class="item"><span>284 Diamonds</span><span>RM 19</span></div>
+            <div class="item"><span>355 Diamonds</span><span>RM 24</span></div>
+            <div class="item"><span>429 Diamonds</span><span>RM 28</span></div>
+            <div class="item"><span>569 Diamonds</span><span>RM 38</span></div>
+            <div class="item"><span>716 Diamonds</span><span>RM 47</span></div>
+            <div class="item"><span>1085 Diamonds</span><span>RM 72</span></div>
+            <div class="item"><span>1446 Diamonds</span><span>RM 94</span></div>
+            <div class="item"><span>1875 Diamonds</span><span>RM 122</span></div>
+            <div class="item"><span>2162 Diamonds</span><span>RM 141</span></div>
+            <div class="item"><span>2976 Diamonds</span><span>RM 188</span></div>
+            <div class="item"><span>3345 Diamonds</span><span>RM 213</span></div>
+            <div class="item"><span>4047 Diamonds</span><span>RM 256</span></div>
+            <div class="item"><span>5138 Diamonds</span><span>RM 329</span></div>
+            <div class="item"><span>6092 Diamonds</span><span>RM 380</span></div>
+            <div class="item"><span>7502 Diamonds</span><span>RM 470</span></div>
+            <div class="item"><span>9377 Diamonds</span><span>RM 592</span></div>
+            <div class="item"><span>10478 Diamonds</span><span>RM 658</span></div>
+        </div>
+    </section>
+    
+    <section class="additional">
+        <h3>Pakej Tambahan</h3>
+        <div class="item"><span>Weekly Pass</span><span>RM 8</span></div>
+        <div class="item"><span>Weekly Pass x10</span><span>RM 77</span></div>
+    </section>
+    
+    <section class="info">
+        <p><strong>Proses:</strong> 1-5 Minit</p>
+        <p><strong>Kaedah Pembayaran:</strong> Bank, Touch n Go</p>
+    </section>
+    
     <footer>
-        <p>&copy; 2025 [Nama Awak]. Hak cipta terpelihara.</p>
+        <p><strong>Hubungi Kami:</strong> WhatsApp <a href="https://wa.me/60195080896">0195080896</a></p>
     </footer>
 </body>
 </html>
