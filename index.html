@@ -3,35 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Perkenalan Diri</title>
+    <title>[Nama Awak] - Portfolio Peribadi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
-        img {
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        header img {
             border-radius: 50%;
             width: 150px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        header img:hover {
+            transform: scale(1.1);
+        }
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+        section {
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .skills-list span {
+            background: #3498db;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        .skills-list span:hover {
+            background: #2980b9;
+        }
+        .contact a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+        .contact a:hover {
+            background: #34495e;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8em; }
+            header p { font-size: 1em; }
+            section h2 { font-size: 1.5em; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Selamat Datang ke Laman Saya!</h1>
-        <img src="gambar-anda.jpg" alt="Gambar Saya">
-        <h2>Tentang Saya</h2>
-        <p>Nama saya [Nama Awak]. Saya seorang [pekerjaan/minat, contoh: pelajar di UTM dan peminat reka bentuk grafik]. Saya suka [hobi atau minat].</p>
-        <h2>Kemahiran Saya</h2>
-        <p>HTML, CSS, Adobe Photoshop, Penulisan Kreatif</p>
-        <h2>Hubungi Saya</h2>
-        <p>E-mel: <a href="mailto:emailanda@example.com">emailanda@example.com</a></p>
-        <p>Ikuti saya di <a href="https://www.instagram.com/namaanda">Instagram</a></p>
+        <header>
+            <img src="gambar-anda.jpg" alt="Gambar Saya">
+            <h1>[Nama Awak]</h1>
+            <p>Pereka Grafik | Pembangun Laman Web | Peminat Teknologi</p>
+        </header>
+        <section id="tentang">
+            <h2>Tentang Saya</h2>
+            <p>Selamat datang! Saya [Nama Awak], seorang [pekerjaan/minat, contoh: pelajar di UTM yang bersemangat tentang reka bentuk dan pembangunan laman web]. Saya suka mencipta sesuatu yang indah dan berfungsi. Di waktu lapang, saya gemar [hobi, contoh: minum kopi dan meneroka teknologi baharu].</p>
+        </section>
+        <section id="kemahiran">
+            <h2>Kemahiran Saya</h2>
+            <div class="skills-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Photoshop</span>
+                <span>Figma</span>
+            </div>
+        </section>
+        <section id="hubungi" class="contact">
+            <h2>Hubungi Saya</h2>
+            <p>Ingin bekerjasama atau sekadar berbual? Hubungi saya!</p>
+            <a href="mailto:emailanda@example.com">E-mel Saya</a>
+            <a href="https://www.instagram.com/namaanda">Instagram</a>
+            <a href="https://www.linkedin.com/in/namaanda">LinkedIn</a>
+        </section>
     </div>
+    <footer>
+        <p>&copy; 2025 [Nama Awak]. Hak cipta terpelihara.</p>
+    </footer>
 </body>
 </html>
