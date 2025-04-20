@@ -29,7 +29,7 @@
             align-items: center;
             justify-content: center;
             background-color: #1e2a44;
-            padding: 15px;
+            padding: 20px; /* Besarkan padding untuk ruang yang lebih besar */
             margin: 10px;
             border-radius: 5px;
             text-decoration: none;
@@ -42,8 +42,14 @@
         }
 
         .game-options img {
-            max-width: 50px; /* Besarkan ikon */
+            max-width: 50px; /* Saiz asal untuk PUBG */
             height: auto;
+        }
+
+        .game-options .icon-large {
+            width: 60px; /* Besarkan Mobile Legends dan Valorant */
+            height: 60px;
+            object-fit: contain; /* Pastikan ikon kekal proporsional */
         }
     </style>
 </head>
@@ -53,14 +59,14 @@
     </header>
     
     <section class="game-options">
-        <a href="mlbb.html">
-            <img src="https://raw.githubusercontent.com/hzbllh/games/2a0766fc60dde382a867d8b00d3c211394bd6055/mobile-legends-new-logo-png_seeklogo-599669.png" alt="Mobile Legends Icon">
+        <a href="mlbb.html" title="Mobile Legends">
+            <img src="https://raw.githubusercontent.com/hzbllh/games/2a0766fc60dde382a867d8b00d3c211394bd6055/mobile-legends-new-logo-png_seeklogo-599669.png" alt="Mobile Legends Icon" class="icon-large">
         </a>
-        <a href="pubg.html">
+        <a href="pubg.html" title="PUBG">
             <img src="https://raw.githubusercontent.com/hzbllh/games/2a0766fc60dde382a867d8b00d3c211394bd6055/pubg-mobile-logo-830F7C46EB-seeklogo.com.png" alt="PUBG Icon">
         </a>
-        <a href="valorant.html">
-            <img src="https://raw.githubusercontent.com/hzbllh/games/2a0766fc60dde382a867d8b00d3c211394bd6055/ee318b57-29fd-48b2-aabe-f7b7d7e02ab2_removalai_preview.png" alt="Valorant Icon">
+        <a href="valorant.html" title="Valorant">
+            <img src="https://raw.githubusercontent.com/hzbllh/games/2a0766fc60dde382a867d8b00d3c211394bd6055/ee318b57-29fd-48b2-aabe-f7b7d7e02ab2_removalai_preview.png" alt="Valorant Icon" class="icon-large">
         </a>
     </section>
 </body>
