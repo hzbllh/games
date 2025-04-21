@@ -103,16 +103,16 @@
     
     <section class="calculator">
         <div>
-            <label>Jumlah Perlawanan:</label>
-            <input type="number" id="totalMatches" placeholder="Masukkan jumlah perlawanan">
+            <label>Jumlah Permainan:</label>
+            <input type="number" id="totalMatches" placeholder="Masukkan jumlah permainan" min="0">
         </div>
         <div>
-            <label>Jumlah Kemenangan:</label>
-            <input type="number" id="currentWins" placeholder="Masukkan jumlah kemenangan">
+            <label>Win Rate Semasa (%):</label>
+            <input type="number" id="currentWinRate" placeholder="Masukkan win rate semasa" min="0" max="100" step="0.01">
         </div>
         <div>
             <label>Win Rate Sasaran (%):</label>
-            <input type="number" id="targetWinRate" placeholder="Masukkan win rate sasaran">
+            <input type="number" id="targetWinRate" placeholder="Masukkan win rate sasaran" min="0" max="100" step="0.01">
         </div>
         <button onclick="calculate()">Kira</button>
         <div id="result"></div>
@@ -122,22 +122,31 @@
 
     <script>
         function calculate() {
-            const totalMatches = parseInt(document.getElementById("totalMatches").value);
-            const currentWins = parseInt(document.getElementById("currentWins").value);
+            // Ambil nilai input
+            const totalMatches = parseFloat(document.getElementById("totalMatches").value);
+            const currentWinRate = parseFloat(document.getElementById("currentWinRate").value);
             const targetWinRate = parseFloat(document.getElementById("targetWinRate").value);
 
-            if (isNaN(totalMatches) || isNaN(currentWins) || isNaN(targetWinRate)) {
+            // Semak jika input sah
+            if (isNaN(totalMatches) || isNaN(currentWinRate) || isNaN(targetWinRate)) {
                 document.getElementById("result").innerText = "Sila masukkan semua nilai.";
                 return;
             }
 
-            if (totalMatches < currentWins || targetWinRate <= 0 || targetWinRate >= 100) {
-                document.getElementById("result").innerText = "Input tidak sah.";
+            if (totalMatches < 0 || currentWinRate < 0 || currentWinRate > 100 || targetWinRate <= 0 || targetWinRate >= 100) {
+                document.getElementById("result").innerText = "Input tidak sah. Pastikan jumlah permainan ≥ 0, win rate semasa 0-100%, dan win rate sasaran < 100%.";
                 return;
             }
 
-            const additionalWins = Math.ceil(((targetWinRate * totalMatches) - (100 * currentWins)) / (100 - targetWinRate));
+            // Kira jumlah kemenangan semasa
+            const currentWins = (currentWinRate * totalMatches) / 100;
 
+            // Kira kemenangan tambahan
+            const additionalWins = Math.ceil(
+                ((targetWinRate * totalMatches) - (100 * currentWins)) / (100 - targetWinRate)
+            );
+
+            // Papar hasil
             if (additionalWins < 0) {
                 document.getElementById("result").innerText = "Win rate semasa sudah melebihi sasaran.";
             } else {
