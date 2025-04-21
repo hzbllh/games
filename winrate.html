@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Win Rate</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .calculator { margin: 50px auto; max-width: 400px; }
+        input { margin: 10px; padding: 5px; }
+        button { padding: 10px 20px; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Kalkulator Win Rate</h2>
+        <div>
+            <label>Jumlah Perlawanan:</label><br>
+            <input type="number" id="totalMatches" placeholder="Masukkan jumlah perlawanan">
+        </div>
+        <div>
+            <label>Jumlah Kemenangan:</label><br>
+            <input type="number" id="currentWins" placeholder="Masukkan jumlah kemenangan">
+        </div>
+        <div>
+            <label>Win Rate Sasaran (%):</label><br>
+            <input type="number" id="targetWinRate" placeholder="Masukkan win rate sasaran">
+        </div>
+        <button onclick="calculate()">Kira</button>
+        <div id="result"></div>
+    </div>
 
+    <script>
+        function calculate() {
+            const totalMatches = parseInt(document.getElementById("totalMatches").value);
+            const currentWins = parseInt(document.getElementById("currentWins").value);
+            const targetWinRate = parseFloat(document.getElementById("targetWinRate").value);
+
+            if (isNaN(totalMatches) || isNaN(currentWins) || isNaN(targetWinRate)) {
+                document.getElementById("result").innerText = "Sila masukkan semua nilai.";
+                return;
+            }
+
+            if (totalMatches < currentWins || targetWinRate <= 0 || targetWinRate >= 100) {
+                document.getElementById("result").innerText = "Input tidak sah.";
+                return;
+            }
+
+            const additionalWins = Math.ceil(((targetWinRate * totalMatches) - (100 * currentWins)) / (100 - targetWinRate));
+
+            if (additionalWins < 0) {
+                document.getElementById("result").innerText = "Win rate semasa sudah melebihi sasaran.";
+            } else {
+                document.getElementById("result").innerText = `Anda perlu ${additionalWins} kemenangan tambahan untuk mencapai win rate ${targetWinRate}%.`;
+            }
+        }
+    </script>
+</body>
+</html>
