@@ -1,58 +1,133 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kalkulator Win Rate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H - Winrate Calculator</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .calculator { margin: 50px auto; max-width: 400px; }
-        input { margin: 10px; padding: 5px; }
-        button { padding: 10px 20px; }
-        #result { margin-top: 20px; font-weight: bold; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a1a2e;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header .logo {
+            max-width: 100px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        header h2 {
+            font-size: 2em;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        .calculator {
+            margin: 20px 0;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .calculator label {
+            display: block;
+            font-size: 1.1em;
+            margin: 10px 0 5px;
+        }
+
+        .calculator input {
+            padding: 10px;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ffd700;
+            background-color: #1e2a44;
+            color: #fff;
+        }
+
+        .calculator button {
+            background-color: #ffd700;
+            color: #0a1a2e;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calculator button:hover {
+            background-color: #e6c200;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ffd700;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #1e2a44;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            margin-top: 20px;
+            border: 1px solid #ffd700;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #2a3b5a;
+        }
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <h2>Kalkulator Win Rate</h2>
-        <div>
-            <label>Jumlah Perlawanan:</label><br>
-            <input type="number" id="totalMatches" placeholder="Masukkan jumlah perlawanan">
-        </div>
-        <div>
-            <label>Jumlah Kemenangan:</label><br>
-            <input type="number" id="currentWins" placeholder="Masukkan jumlah kemenangan">
-        </div>
-        <div>
-            <label>Win Rate Sasaran (%):</label><br>
-            <input type="number" id="targetWinRate" placeholder="Masukkan win rate sasaran">
-        </div>
-        <button onclick="calculate()">Kira</button>
-        <div id="result"></div>
-    </div>
+    <header>
+        <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
+        <h2>Winrate Calculator</h2>
+        <p>Masukkan bilangan menang dan kalah untuk kira winrate anda</p>
+    </header>
+    
+    <section class="calculator">
+        <label for="wins">Bilangan Menang:</label>
+        <input type="number" id="wins" min="0" value="0">
+        
+        <label for="losses">Bilangan Kalah:</label>
+        <input type="number" id="losses" min="0" value="0">
+        
+        <button onclick="calculateWinrate()">Kira Winrate</button>
+        
+        <div id="result">Winrate: -</div>
+    </section>
+    
+    <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
 
     <script>
-        function calculate() {
-            const totalMatches = parseInt(document.getElementById("totalMatches").value);
-            const currentWins = parseInt(document.getElementById("currentWins").value);
-            const targetWinRate = parseFloat(document.getElementById("targetWinRate").value);
+        function calculateWinrate() {
+            const wins = parseInt(document.getElementById('wins').value) || 0;
+            const losses = parseInt(document.getElementById('losses').value) || 0;
+            const totalGames = wins + losses;
 
-            if (isNaN(totalMatches) || isNaN(currentWins) || isNaN(targetWinRate)) {
-                document.getElementById("result").innerText = "Sila masukkan semua nilai.";
+            if (totalGames === 0) {
+                document.getElementById('result').textContent = "Winrate: 0%";
                 return;
             }
 
-            if (totalMatches < currentWins || targetWinRate <= 0 || targetWinRate >= 100) {
-                document.getElementById("result").innerText = "Input tidak sah.";
-                return;
-            }
-
-            const additionalWins = Math.ceil(((targetWinRate * totalMatches) - (100 * currentWins)) / (100 - targetWinRate));
-
-            if (additionalWins < 0) {
-                document.getElementById("result").innerText = "Win rate semasa sudah melebihi sasaran.";
-            } else {
-                document.getElementById("result").innerText = `Anda perlu ${additionalWins} kemenangan tambahan untuk mencapai win rate ${targetWinRate}%.`;
-            }
+            const winrate = (wins / totalGames) * 100;
+            document.getElementById('result').textContent = `Winrate: ${winrate.toFixed(2)}%`;
         }
     </script>
 </body>
