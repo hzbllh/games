@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,9 +32,8 @@
         }
 
         .calculator {
-            margin: 20px 0;
+            margin: 20px auto;
             max-width: 400px;
-            margin: 0 auto;
         }
 
         .calculator label {
@@ -74,6 +73,7 @@
             margin-top: 20px;
             font-size: 1.2em;
             color: #ffd700;
+            font-weight: bold;
         }
 
         .back-button {
@@ -97,37 +97,52 @@
 <body>
     <header>
         <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
-        <h2>Winrate Calculator</h2>
-        <p>Masukkan bilangan menang dan kalah untuk kira winrate anda</p>
+        <h2>Kalkulator Win Rate</h2>
+        <p>Kira berapa kemenangan tambahan untuk mencapai winrate sasaran</p>
     </header>
     
     <section class="calculator">
-        <label for="wins">Bilangan Menang:</label>
-        <input type="number" id="wins" min="0" value="0">
-        
-        <label for="losses">Bilangan Kalah:</label>
-        <input type="number" id="losses" min="0" value="0">
-        
-        <button onclick="calculateWinrate()">Kira Winrate</button>
-        
-        <div id="result">Winrate: -</div>
+        <div>
+            <label>Jumlah Perlawanan:</label>
+            <input type="number" id="totalMatches" placeholder="Masukkan jumlah perlawanan">
+        </div>
+        <div>
+            <label>Jumlah Kemenangan:</label>
+            <input type="number" id="currentWins" placeholder="Masukkan jumlah kemenangan">
+        </div>
+        <div>
+            <label>Win Rate Sasaran (%):</label>
+            <input type="number" id="targetWinRate" placeholder="Masukkan win rate sasaran">
+        </div>
+        <button onclick="calculate()">Kira</button>
+        <div id="result"></div>
     </section>
     
     <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
 
     <script>
-        function calculateWinrate() {
-            const wins = parseInt(document.getElementById('wins').value) || 0;
-            const losses = parseInt(document.getElementById('losses').value) || 0;
-            const totalGames = wins + losses;
+        function calculate() {
+            const totalMatches = parseInt(document.getElementById("totalMatches").value);
+            const currentWins = parseInt(document.getElementById("currentWins").value);
+            const targetWinRate = parseFloat(document.getElementById("targetWinRate").value);
 
-            if (totalGames === 0) {
-                document.getElementById('result').textContent = "Winrate: 0%";
+            if (isNaN(totalMatches) || isNaN(currentWins) || isNaN(targetWinRate)) {
+                document.getElementById("result").innerText = "Sila masukkan semua nilai.";
                 return;
             }
 
-            const winrate = (wins / totalGames) * 100;
-            document.getElementById('result').textContent = `Winrate: ${winrate.toFixed(2)}%`;
+            if (totalMatches < currentWins || targetWinRate <= 0 || targetWinRate >= 100) {
+                document.getElementById("result").innerText = "Input tidak sah.";
+                return;
+            }
+
+            const additionalWins = Math.ceil(((targetWinRate * totalMatches) - (100 * currentWins)) / (100 - targetWinRate));
+
+            if (additionalWins < 0) {
+                document.getElementById("result").innerText = "Win rate semasa sudah melebihi sasaran.";
+            } else {
+                document.getElementById("result").innerText = `Anda perlu ${additionalWins} kemenangan tambahan untuk mencapai win rate ${targetWinRate}%.`;
+            }
         }
     </script>
 </body>
