@@ -25,7 +25,8 @@
         }
 
         .game-options a {
-            display: inline-block;
+            display: inline-flex; /* Ubah ke inline-flex untuk susun ikon dan teks */
+            align-items: center;
             background-color: #1e2a44;
             color: #fff;
             padding: 15px 30px;
@@ -40,6 +41,12 @@
         .game-options a:hover {
             background-color: #2a3b5a;
         }
+
+        .game-options img {
+            max-width: 30px;
+            height: auto;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +55,10 @@
     </header>
     
     <section class="game-options">
-        <a href="mlbb.html">Mobile Legends</a>
+        <a href="mlbb.html">
+            <img src="https://raw.githubusercontent.com/hzbllh/games/80feffb50d134cafadad745f71af5d7e2f1354b7/unnamed.jpg" alt="Mobile Legends Icon">
+            Mobile Legends
+        </a>
         <a href="pubg.html">PUBG</a>
         <a href="valorant.html">Valorant</a>
         <a href="winrate.html">Winrate Calculator</a>
