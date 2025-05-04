@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,47 +32,63 @@
         }
 
         .calculator {
-            margin: 20px 0;
+            background-color: #1e2a44;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ffd700;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            margin: 20px auto;
             opacity: 0;
             animation: fadeIn 0.5s forwards;
         }
 
-        .calculator label {
+        .calculator h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #ffd700;
+        }
+
+        label {
             display: block;
             margin: 10px 0 5px;
             font-size: 1.1em;
+            color: #ccc;
         }
 
-        .calculator input {
+        input {
+            width: 100%;
             padding: 8px;
-            font-size: 1em;
-            border-radius: 5px;
+            margin-bottom: 10px;
             border: 1px solid #ffd700;
-            background-color: #1e2a44;
+            border-radius: 5px;
+            background-color: #2a3b5a;
             color: #fff;
-            width: 200px;
+            font-size: 1em;
         }
 
-        .calculator button {
+        button {
+            padding: 10px 20px;
             background-color: #ffd700;
             color: #0a1a2e;
-            padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            font-size: 1.1em;
             cursor: pointer;
-            margin-top: 10px;
+            font-size: 1.1em;
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        .calculator button:hover {
+        button:hover {
             background-color: #e6c200;
             transform: scale(1.05);
         }
 
-        .result {
+        #result {
             margin-top: 20px;
-            font-size: 1.2em;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #ffd700;
         }
 
         footer {
@@ -129,14 +145,27 @@
                 font-size: 1em;
             }
 
-            .calculator input {
-                width: 150px;
-                font-size: 0.9em;
+            .calculator {
+                padding: 15px;
+                max-width: 300px;
             }
 
-            .calculator button {
+            .calculator h2 {
+                font-size: 1.3em;
+            }
+
+            input {
+                font-size: 0.9em;
+                padding: 6px;
+            }
+
+            button {
                 font-size: 0.9em;
                 padding: 8px 15px;
+            }
+
+            #result {
+                font-size: 1em;
             }
 
             .back-button {
@@ -151,39 +180,75 @@
     <header>
         <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
         <h2>Winrate Calculator</h2>
-        <p>Kira winrate permainan anda</p>
+        <p>Kira bilangan kemenangan tambahan untuk winrate sasaran</p>
     </header>
-    
-    <section class="calculator">
-        <label for="total-matches">Jumlah Perlawanan:</label>
-        <input type="number" id="total-matches" placeholder="Masukkan jumlah perlawanan">
-        
-        <label for="wins">Jumlah Kemenangan:</label>
-        <input type="number" id="wins" placeholder="Masukkan jumlah kemenangan">
-        
-        <button onclick="calculateWinrate()">Kira Winrate</button>
-        
-        <div class="result" id="result"></div>
-    </section>
-    
+
+    <div class="calculator">
+        <h2>Kalkulator Win Rate</h2>
+        <div>
+            <label>Jumlah Permainan:</label>
+            <input type="number" id="totalMatches" placeholder="Masukkan jumlah permainan" min="0">
+        </div>
+        <div>
+            <label>Win Rate Semasa (%):</label>
+            <input type="number" id="currentWinRate" placeholder="Masukkan win rate semasa" min="0" max="100" step="0.01">
+        </div>
+        <div>
+            <label>Win Rate Sasaran (%):</label>
+            <input type="number" id="targetWinRate" placeholder="Masukkan win rate sasaran" min="0" max="100" step="0.01">
+        </div>
+        <button onclick="calculate()">Kira</button>
+        <div id="result"></div>
+    </div>
+
     <footer>
-        <p>&nbsp;</p> <!-- Ruang kosong untuk kekalkan layout -->
+        <p> </p>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
 
     <script>
-        function calculateWinrate() {
-            const totalMatches = parseInt(document.getElementById('total-matches').value);
-            const wins = parseInt(document.getElementById('wins').value);
-            const resultDiv = document.getElementById('result');
+        function calculate() {
+            // Ambil nilai input
+            const totalMatches = parseFloat(document.getElementById("totalMatches").value) || 0;
+            const currentWinRate = parseFloat(document.getElementById("currentWinRate").value) || 0;
+            const targetWinRate = parseFloat(document.getElementById("targetWinRate").value) || 0;
 
-            if (isNaN(totalMatches) || isNaN(wins) || totalMatches <= 0 || wins < 0 || wins > totalMatches) {
-                resultDiv.innerHTML = "Sila masukkan nombor yang sah.";
+            const resultDiv = document.getElementById("result");
+
+            // Semak jika input kosong
+            if (totalMatches === 0 || currentWinRate === 0 || targetWinRate === 0) {
+                resultDiv.innerText = "Sila masukkan semua nilai.";
                 return;
             }
 
-            const winrate = (wins / totalMatches) * 100;
-            resultDiv.innerHTML = `Winrate anda: ${winrate.toFixed(2)}%`;
+            // Semak jika input sah
+            if (totalMatches < 0) {
+                resultDiv.innerText = "Jumlah permainan tidak boleh negatif.";
+                return;
+            }
+            if (currentWinRate < 0 || currentWinRate > 100) {
+                resultDiv.innerText = "Win rate semasa mestilah antara 0 dan 100%.";
+                return;
+            }
+            if (targetWinRate <= 0 || targetWinRate >= 100) {
+                resultDiv.innerText = "Win rate sasaran mestilah antara 0 dan kurang daripada 100%.";
+                return;
+            }
+
+            // Kira jumlah kemenangan semasa
+            const currentWins = (currentWinRate * totalMatches) / 100;
+
+            // Kira kemenangan tambahan
+            const additionalWins = Math.ceil(
+                ((targetWinRate * totalMatches) - (100 * currentWins)) / (100 - targetWinRate)
+            );
+
+            // Papar hasil
+            if (additionalWins < 0) {
+                resultDiv.innerText = "Win rate semasa sudah melebihi sasaran.";
+            } else {
+                resultDiv.innerText = `Anda perlu ${additionalWins} kemenangan tambahan untuk mencapai win rate ${targetWinRate}%.`;
+            }
         }
     </script>
 </body>
