@@ -18,7 +18,7 @@
 
         /* Gaya Header */
         .header-section {
-            background-image: url('https://via.placeholder.com/1200x300?text=Kedai+H+Background'); /* Gantikan dengan URL gambar sebenar */
+            background-image: url('https://via.placeholder.com/1200x300?text=Kedai+H+Background');
             background-size: cover;
             background-position: center;
             padding: 50px 20px;
@@ -31,6 +31,7 @@
             height: auto;
             margin: 0 auto;
             display: block;
+            animation: pulse 2s infinite; /* Animasi pulse pada logo */
         }
 
         .header-section h1 {
@@ -56,11 +57,12 @@
             text-decoration: none;
             font-size: 1.2em;
             border: 1px solid #ffd700;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s; /* Transisi untuk hover */
         }
 
         .game-options a:hover {
             background-color: #2a3b5a;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Efek bayangan semasa hover */
         }
 
         .game-options img {
@@ -73,6 +75,44 @@
             font-size: 24px;
             margin-right: 10px;
             color: #ffd700;
+        }
+
+        /* Animasi Pulse untuk Logo */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Media Query untuk Responsif */
+        @media (max-width: 600px) {
+            .header-section {
+                padding: 30px 10px;
+            }
+
+            .header-section .logo {
+                max-width: 80px; /* Kecilkan logo pada skrin kecil */
+            }
+
+            .header-section h1 {
+                font-size: 1.8em; /* Kecilkan teks tajuk */
+            }
+
+            .game-options a {
+                display: flex; /* Tukar kepada flex untuk stack menegak */
+                width: 80%; /* Lebar penuh dengan margin auto */
+                margin: 10px auto;
+                font-size: 1em; /* Kecilkan teks */
+                padding: 10px 20px;
+            }
+
+            .game-options img {
+                max-width: 25px; /* Kecilkan ikon */
+            }
+
+            .game-options i {
+                font-size: 20px; /* Kecilkan ikon FontAwesome */
+            }
         }
     </style>
 </head>
