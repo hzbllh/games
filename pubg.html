@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H - Pricelist UC PUBG</title>
+    <title>H - Pricelist PUBG</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,6 +52,9 @@
             align-items: center;
             font-size: 1.1em;
             border: 1px solid #ffd700;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            animation-delay: calc(var(--index) * 0.1s);
         }
 
         .item span:first-child {
@@ -94,11 +97,12 @@
             font-size: 1.1em;
             text-decoration: none;
             margin-top: 10px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .whatsapp-button:hover {
             background-color: #1ebe57;
+            transform: scale(1.05);
         }
 
         .back-button {
@@ -111,29 +115,65 @@
             text-decoration: none;
             margin-top: 20px;
             border: 1px solid #ffd700;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .back-button:hover {
             background-color: #2a3b5a;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            header .logo {
+                max-width: 80px;
+            }
+
+            header h2 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .item {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            .whatsapp-button, .back-button {
+                font-size: 0.9em;
+                padding: 8px 15px;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
-        <h2>Pricelist UC PUBG</h2>
-        <p>Malaysia (Via User ID)</p>
+        <h2>Pricelist PUBG</h2>
+        <p>Malaysia (Via ID & Server)</p>
     </header>
     
     <section class="pricelist">
         <div class="grid">
-            <div class="item"><span>60 UC</span><span>RM 4.50</span></div>
-            <div class="item"><span>300+25 UC</span><span>RM 21</span></div>
-            <div class="item"><span>600+60 UC</span><span>RM 42</span></div>
-            <div class="item"><span>1500+300 UC</span><span>RM 100</span></div>
-            <div class="item"><span>3000+850 UC</span><span>RM 200</span></div>
-            <div class="item"><span>6000+2100 UC</span><span>RM 400</span></div>
+            <div class="item" style="--index: 0;"><span>60 UC</span><span>RM 4</span></div>
+            <div class="item" style="--index: 1;"><span>325 UC</span><span>RM 19</span></div>
+            <div class="item" style="--index: 2;"><span>660 UC</span><span>RM 38</span></div>
+            <div class="item" style="--index: 3;"><span>1500 UC</span><span>RM 85</span></div>
+            <div class="item" style="--index: 4;"><span>3000 UC</span><span>RM 165</span></div>
+            <div class="item" style="--index: 5;"><span>6000 UC</span><span>RM 325</span></div>
+            <div class="item" style="--index: 6;"><span>9000 UC</span><span>RM 485</span></div>
         </div>
     </section>
     
@@ -143,7 +183,7 @@
     
     <footer>
         <p><strong>↓↓ beli disini ↓↓</strong></p>
-        <a href="https://wa.me/60195080896?text=Nak%20UC%20PUBG" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
+        <a href="https://wa.me/60195080896?text=Nak%20Top-up%20PUBG" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
         <br>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
