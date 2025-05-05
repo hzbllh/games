@@ -35,6 +35,12 @@
             margin: 20px 0;
         }
 
+        .recommended h3 {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -52,9 +58,9 @@
             align-items: center;
             font-size: 1.1em;
             border: 1px solid #ffd700;
-            opacity: 0; /* Untuk animasi fade-in */
-            animation: fadeIn 0.5s forwards; /* Animasi fade-in pada item */
-            animation-delay: calc(var(--index) * 0.1s); /* Kelembapan berdasarkan indeks */
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            animation-delay: calc(var(--index) * 0.1s);
         }
 
         .item span:first-child {
@@ -97,12 +103,12 @@
             font-size: 1.1em;
             text-decoration: none;
             margin-top: 10px;
-            transition: background-color 0.3s, transform 0.3s; /* Transisi untuk hover */
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .whatsapp-button:hover {
             background-color: #1ebe57;
-            transform: scale(1.05); /* Efek zoom semasa hover */
+            transform: scale(1.05);
         }
 
         .back-button {
@@ -115,46 +121,48 @@
             text-decoration: none;
             margin-top: 20px;
             border: 1px solid #ffd700;
-            transition: background-color 0.3s, transform 0.3s; /* Transisi untuk hover */
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .back-button:hover {
             background-color: #2a3b5a;
-            transform: scale(1.05); /* Efek zoom semasa hover */
+            transform: scale(1.05);
         }
 
-        /* Animasi Fade-In untuk Item Harga */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Media Query untuk Responsif */
         @media (max-width: 600px) {
             header .logo {
-                max-width: 80px; /* Kecilkan logo */
+                max-width: 80px;
             }
 
             header h2 {
-                font-size: 1.5em; /* Kecilkan teks tajuk */
+                font-size: 1.5em;
             }
 
             header p {
-                font-size: 1em; /* Kecilkan teks penerangan */
+                font-size: 1em;
+            }
+
+            .recommended h3 {
+                font-size: 1.3em;
             }
 
             .grid {
-                grid-template-columns: 1fr; /* Satu lajur penuh pada skrin kecil */
+                grid-template-columns: 1fr;
             }
 
             .item {
-                font-size: 1em; /* Kecilkan teks harga */
-                padding: 10px; /* Kurangkan padding */
+                font-size: 1em;
+                padding: 10px;
             }
 
             .whatsapp-button, .back-button {
-                font-size: 0.9em; /* Kecilkan teks butang */
-                padding: 8px 15px; /* Kurangkan padding butang */
+                font-size: 0.9em;
+                padding: 8px 15px;
                 margin-top: 10px;
             }
         }
@@ -168,28 +176,39 @@
     </header>
     
     <section class="pricelist">
+        <!-- Bahagian Recommended Recharge Event Task -->
+        <div class="recommended">
+            <h3>Recommended Recharge Event Task</h3>
+            <div class="grid">
+                <div class="item" style="--index: 0;"><span>284 Diamonds</span><span>RM 19</span></div>
+                <div class="item" style="--index: 1;"><span>2 Weekly + 56</span><span>RM 20</span></div>
+                <div class="item" style="--index: 2;"><span>3 Weekly</span><span>RM 24</span></div>
+            </div>
+        </div>
+
+        <!-- Senarai Harga Asal -->
         <div class="grid">
-            <div class="item" style="--index: 0;"><span>140 Diamonds</span><span>RM 9</span></div>
-            <div class="item" style="--index: 1;"><span>284 Diamonds</span><span>RM 19</span></div>
-            <div class="item" style="--index: 2;"><span>355 Diamonds</span><span>RM 24</span></div>
-            <div class="item" style="--index: 3;"><span>429 Diamonds</span><span>RM 28</span></div>
-            <div class="item" style="--index: 4;"><span>569 Diamonds</span><span>RM 38</span></div>
-            <div class="item" style="--index: 5;"><span>716 Diamonds</span><span>RM 47</span></div>
-            <div class="item" style="--index: 6;"><span>1085 Diamonds</span><span>RM 72</span></div>
-            <div class="item" style="--index: 7;"><span>1446 Diamonds</span><span>RM 94</span></div>
-            <div class="item" style="--index: 8;"><span>1875 Diamonds</span><span>RM 122</span></div>
-            <div class="item" style="--index: 9;"><span>2162 Diamonds</span><span>RM 141</span></div>
-            <div class="item" style="--index: 10;"><span>2976 Diamonds</span><span>RM 188</span></div>
-            <div class="item" style="--index: 11;"><span>3345 Diamonds</span><span>RM 213</span></div>
-            <div class="item" style="--index: 12;"><span>4047 Diamonds</span><span>RM 256</span></div>
-            <div class="item" style="--index: 13;"><span>5138 Diamonds</span><span>RM 329</span></div>
-            <div class="item" style="--index: 14;"><span>6092 Diamonds</span><span>RM 380</span></div>
-            <div class="item" style="--index: 15;"><span>7502 Diamonds</span><span>RM 470</span></div>
-            <div class="item" style="--index: 16;"><span>9377 Diamonds</span><span>RM 592</span></div>
-            <div class="item" style="--index: 17;"><span>10478 Diamonds</span><span>RM 658</span></div>
-            <div class="item" style="--index: 18;"><span>Weekly Pass</span><span>RM 8</span></div>
-            <div class="item" style="--index: 19;"><span>Weekly Pass x3</span><span>RM 24</span></div>
-            <div class="item" style="--index: 20;"><span>Weekly Pass x10</span><span>RM 77</span></div>
+            <div class="item" style="--index: 3;"><span>140 Diamonds</span><span>RM 9</span></div>
+            <div class="item" style="--index: 4;"><span>284 Diamonds</span><span>RM 19</span></div>
+            <div class="item" style="--index: 5;"><span>355 Diamonds</span><span>RM 24</span></div>
+            <div class="item" style="--index: 6;"><span>429 Diamonds</span><span>RM 28</span></div>
+            <div class="item" style="--index: 7;"><span>569 Diamonds</span><span>RM 38</span></div>
+            <div class="item" style="--index: 8;"><span>716 Diamonds</span><span>RM 47</span></div>
+            <div class="item" style="--index: 9;"><span>1085 Diamonds</span><span>RM 72</span></div>
+            <div class="item" style="--index: 10;"><span>1446 Diamonds</span><span>RM 94</span></div>
+            <div class="item" style="--index: 11;"><span>1875 Diamonds</span><span>RM 122</span></div>
+            <div class="item" style="--index: 12;"><span>2162 Diamonds</span><span>RM 141</span></div>
+            <div class="item" style="--index: 13;"><span>2976 Diamonds</span><span>RM 188</span></div>
+            <div class="item" style="--index: 14;"><span>3345 Diamonds</span><span>RM 213</span></div>
+            <div class="item" style="--index: 15;"><span>4047 Diamonds</span><span>RM 256</span></div>
+            <div class="item" style="--index: 16;"><span>5138 Diamonds</span><span>RM 329</span></div>
+            <div class="item" style="--index: 17;"><span>6092 Diamonds</span><span>RM 380</span></div>
+            <div class="item" style="--index: 18;"><span>7502 Diamonds</span><span>RM 470</span></div>
+            <div class="item" style="--index: 19;"><span>9377 Diamonds</span><span>RM 592</span></div>
+            <div class="item" style="--index: 20;"><span>10478 Diamonds</span><span>RM 658</span></div>
+            <div class="item" style="--index: 21;"><span>Weekly Pass</span><span>RM 8</span></div>
+            <div class="item" style="--index: 22;"><span>Weekly Pass x3</span><span>RM 24</span></div>
+            <div class="item" style="--index: 23;"><span>Weekly Pass x10</span><span>RM 77</span></div>
         </div>
     </section>
     
