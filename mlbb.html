@@ -78,6 +78,39 @@
             margin-bottom: 15px;
         }
 
+        .request {
+            background-color: #1e2a44;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffd700;
+            margin: 20px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .request h3 {
+            font-size: 1.4em;
+            color: #ffd700;
+            margin: 0 0 10px 0;
+        }
+
+        .request a {
+            display: inline-block;
+            background-color: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .request a:hover {
+            background-color: #1ebe57;
+            transform: scale(1.05);
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -184,15 +217,15 @@
                 font-size: 1em;
             }
 
-            .notice {
+            .notice, .request {
                 padding: 10px;
             }
 
-            .notice h3 {
+            .notice h3, .request h3 {
                 font-size: 1.2em;
             }
 
-            .notice p {
+            .notice p, .request a {
                 font-size: 1em;
             }
 
@@ -274,6 +307,11 @@
                 <div class="item" style="--index: 23;"><span>10478 Diamonds</span><span>RM 710.57</span></div>
             </div>
         </div>
+    </section>
+
+    <section class="request">
+        <h3>Full Pricelist Request Di Whatsapp</h3>
+        <a href="https://wa.me/60195080896?text=Permintaan%20Full%20Pricelist" class="whatsapp-button">Permintaan Sekarang</a>
     </section>
     
     <section class="info">
