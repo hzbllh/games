@@ -3,142 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kedai H - Pricelist Games</title>
-    <!-- FontAwesome untuk ikon Winrate Calculator -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Kedai H - Topup Games & Winrate Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #0a1a2e;
             color: #fff;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             text-align: center;
         }
 
-        /* Gaya Header */
-        .header-section {
-            background-image: url('https://via.placeholder.com/1200x300?text=Kedai+H+Background');
-            background-size: cover;
-            background-position: center;
-            padding: 50px 20px;
-            position: relative;
-            border-bottom: 2px solid #ffd700;
-        }
-
-        .header-section .logo {
+        header .logo {
             max-width: 100px;
             height: auto;
             margin: 0 auto;
-            display: block;
-            animation: pulse 2s infinite; /* Animasi pulse pada logo */
         }
 
-        .header-section h1 {
+        header h1 {
             font-size: 2.5em;
-            margin: 10px 0;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
         }
 
-        /* Gaya Butang Pilihan Permainan */
-        .game-options {
+        header p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        .games, .winrate, .community {
             margin: 30px 0;
         }
 
-        .game-options a {
-            display: inline-flex;
-            align-items: center;
+        .games h2, .winrate h2, .community h2 {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .game-card, .winrate-card, .community-card {
             background-color: #1e2a44;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ffd700;
+            transition: transform 0.3s;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            animation-delay: calc(var(--index) * 0.1s);
+        }
+
+        .game-card:hover, .winrate-card:hover, .community-card:hover {
+            transform: scale(1.05);
+        }
+
+        .game-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .game-card h3, .winrate-card h3 {
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+
+        .game-card a, .winrate-card a, .community-card a {
+            display: inline-block;
+            background-color: #25D366;
             color: #fff;
-            padding: 15px 30px;
-            margin: 10px;
+            padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .game-card a:hover, .winrate-card a:hover, .community-card a:hover {
+            background-color: #1ebe57;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+
+        footer p {
             font-size: 1.2em;
-            border: 1px solid #ffd700;
-            transition: background-color 0.3s, box-shadow 0.3s; /* Transisi untuk hover */
+            color: #ccc;
         }
 
-        .game-options a:hover {
-            background-color: #2a3b5a;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Efek bayangan semasa hover */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .game-options img {
-            max-width: 30px;
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .game-options i {
-            font-size: 24px;
-            margin-right: 10px;
-            color: #ffd700;
-        }
-
-        /* Animasi Pulse untuk Logo */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Media Query untuk Responsif */
         @media (max-width: 600px) {
-            .header-section {
-                padding: 30px 10px;
+            header .logo {
+                max-width: 80px;
             }
 
-            .header-section .logo {
-                max-width: 80px; /* Kecilkan logo pada skrin kecil */
+            header h1 {
+                font-size: 2em;
             }
 
-            .header-section h1 {
-                font-size: 1.8em; /* Kecilkan teks tajuk */
+            header p {
+                font-size: 1em;
             }
 
-            .game-options a {
-                display: flex; /* Tukar kepada flex untuk stack menegak */
-                width: 80%; /* Lebar penuh dengan margin auto */
-                margin: 10px auto;
-                font-size: 1em; /* Kecilkan teks */
-                padding: 10px 20px;
+            .games h2, .winrate h2, .community h2 {
+                font-size: 1.5em;
             }
 
-            .game-options img {
-                max-width: 25px; /* Kecilkan ikon */
+            .game-card, .winrate-card, .community-card {
+                padding: 15px;
             }
 
-            .game-options i {
-                font-size: 20px; /* Kecilkan ikon FontAwesome */
+            .game-card h3, .winrate-card h3 {
+                font-size: 1.2em;
+            }
+
+            .game-card a, .winrate-card a, .community-card a {
+                font-size: 1em;
+                padding: 8px 15px;
             }
         }
     </style>
 </head>
 <body>
-    <section class="header-section">
+    <header>
         <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
-        <h1>Kedai H - Pricelist Games</h1>
+        <h1>Kedai H</h1>
+        <p>Topup Games & Winrate Calculator</p>
+    </header>
+
+    <section class="games">
+        <h2>Topup Games</h2>
+        <div class="grid">
+            <div class="game-card" style="--index: 0;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Mobile_Legends_Bang_Bang_Logo.png" alt="Mobile Legends">
+                <h3>Mobile Legends</h3>
+                <a href="mlbb.html">Topup Sekarang</a>
+            </div>
+            <div class="game-card" style="--index: 1;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/PUBG_Logo.png/512px-PUBG_Logo.png" alt="PUBG">
+                <h3>PUBG</h3>
+                <a href="pubg.html">Topup Sekarang</a>
+            </div>
+            <div class="game-card" style="--index: 2;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version_%28cropped%29.svg/512px-Valorant_logo_-_pink_color_version_%28cropped%29.svg.png" alt="Valorant">
+                <h3>Valorant</h3>
+                <a href="valorant.html">Topup Sekarang</a>
+            </div>
+        </div>
     </section>
-    
-    <section class="game-options">
-        <a href="mlbb.html">
-            <img src="https://raw.githubusercontent.com/hzbllh/games/80feffb50d134cafadad745f71af5d7e2f1354b7/unnamed.jpg" alt="Mobile Legends Icon">
-            Mobile Legends
-        </a>
-        <a href="pubg.html">
-            <img src="https://raw.githubusercontent.com/hzbllh/games/cbc27b2820a2e606d2d052ee4cbfd35228232a05/unnamed.webp" alt="PUBG Icon">
-            PUBG
-        </a>
-        <a href="valorant.html">
-            <img src="https://raw.githubusercontent.com/hzbllh/games/cbc27b2820a2e606d2d052ee4cbfd35228232a05/1WQY5YfS_400x400.jpg" alt="Valorant Icon">
-            Valorant
-        </a>
-        <a href="winrate.html">
-            <i class="fas fa-calculator"></i>
-            Winrate Calculator
-        </a>
+
+    <section class="winrate">
+        <h2>Winrate Calculator</h2>
+        <div class="grid">
+            <div class="winrate-card" style="--index: 3;">
+                <h3>Kira Winrate Anda</h3>
+                <a href="winrate.html">Kira Sekarang</a>
+            </div>
+        </div>
     </section>
+
+    <section class="community">
+        <h2>Join Our Community</h2>
+        <div class="grid">
+            <div class="community-card" style="--index: 4;">
+                <a href="https://chat.whatsapp.com/IYzrlrjtP1L2jikkTdiSBX">Join Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Kedai H. All rights reserved.</p>
+    </footer>
 </body>
 </html>
