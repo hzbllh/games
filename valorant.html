@@ -13,28 +13,26 @@
             padding: 20px;
             text-align: center;
         }
-
         header .logo {
             max-width: 100px;
             height: auto;
             margin: 0 auto;
         }
-
         header h2 {
             font-size: 2em;
             color: #fff;
             margin: 10px 0;
         }
-
         header p {
             font-size: 1.2em;
             color: #ccc;
         }
-
-        .pricelist {
-            margin: 20px 0;
+        .pricelist h3 {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-top: 20px;
+            margin-bottom: 15px;
         }
-
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -42,7 +40,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .item {
             background-color: #1e2a44;
             padding: 15px;
@@ -56,38 +53,30 @@
             animation: fadeIn 0.5s forwards;
             animation-delay: calc(var(--index) * 0.1s);
         }
-
         .item span:first-child {
             font-weight: bold;
         }
-
         .item span:last-child {
             color: #ffd700;
         }
-
         .info p {
             font-size: 1.1em;
             margin: 10px 0;
         }
-
         footer {
             margin-top: 20px;
         }
-
         footer p {
             font-size: 1.2em;
             margin: 10px 0;
         }
-
         footer a {
             color: #ffd700;
             text-decoration: none;
         }
-
         footer a:hover {
             text-decoration: underline;
         }
-
         .whatsapp-button {
             display: inline-block;
             background-color: #25D366;
@@ -99,12 +88,10 @@
             margin-top: 10px;
             transition: background-color 0.3s, transform 0.3s;
         }
-
         .whatsapp-button:hover {
             background-color: #1ebe57;
             transform: scale(1.05);
         }
-
         .back-button {
             display: inline-block;
             background-color: #1e2a44;
@@ -117,44 +104,22 @@
             border: 1px solid #ffd700;
             transition: background-color 0.3s, transform 0.3s;
         }
-
         .back-button:hover {
             background-color: #2a3b5a;
             transform: scale(1.05);
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         @media (max-width: 600px) {
-            header .logo {
-                max-width: 80px;
-            }
-
-            header h2 {
-                font-size: 1.5em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .item {
-                font-size: 1em;
-                padding: 10px;
-            }
-
-            .whatsapp-button, .back-button {
-                font-size: 0.9em;
-                padding: 8px 15px;
-                margin-top: 10px;
-            }
+            header .logo { max-width: 80px; }
+            header h2 { font-size: 1.5em; }
+            header p { font-size: 1em; }
+            .pricelist h3 { font-size: 1.3em; }
+            .grid { grid-template-columns: 1fr; }
+            .item { font-size: 1em; padding: 10px; }
+            .whatsapp-button, .back-button { font-size: 0.9em; padding: 8px 15px; margin-top: 10px; }
         }
     </style>
 </head>
@@ -164,26 +129,25 @@
         <h2>Pricelist Valorant</h2>
         <p>Malaysia (Via ID & Server)</p>
     </header>
-    
     <section class="pricelist">
-        <div class="grid">
-            <div class="item" style="--index: 0;"><span>125 VP</span><span>RM 5</span></div>
-            <div class="item" style="--index: 1;"><span>475 VP</span><span>RM 19</span></div>
-            <div class="item" style="--index: 2;"><span>1000 VP</span><span>RM 39</span></div>
-            <div class="item" style="--index: 3;"><span>2050 VP</span><span>RM 79</span></div>
-            <div class="item" style="--index: 4;"><span>3650 VP</span><span>RM 139</span></div>
-            <div class="item" style="--index: 5;"><span>5350 VP</span><span>RM 199</span></div>
-            <div class="item" style="--index: 6;"><span>11000 VP</span><span>RM 399</span></div>
+        <div class="diamond">
+            <h3>Pricelist Valorant</h3>
+            <div class="grid">
+                <div class="item" style="--index: 0;"><span>475 Points</span><span>RM 16</span></div>
+                <div class="item" style="--index: 1;"><span>1000 Points</span><span>RM 33.50</span></div>
+                <div class="item" style="--index: 2;"><span>2050 Points</span><span>RM 65.50</span></div>
+                <div class="item" style="--index: 3;"><span>3650 Points</span><span>RM 115</span></div>
+                <div class="item" style="--index: 4;"><span>5350 Points</span><span>RM 163</span></div>
+                <div class="item" style="--index: 5;"><span>11000 Points</span><span>RM 333</span></div>
+            </div>
         </div>
     </section>
-    
     <section class="info">
         <p><strong>Kaedah Pembayaran:</strong> Online Banking / Touch N Go</p>
     </section>
-    
     <footer>
         <p><strong>↓↓ beli disini ↓↓</strong></p>
-        <a href="https://wa.me/60195080896?text=Nak%20Top-up%20Valorant" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
+        <a href="https://wa.me/60195080896?text=Nak%20Valorant%20Points" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
         <br>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
