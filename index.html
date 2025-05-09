@@ -91,25 +91,18 @@
         .community a {
             display: inline-flex;
             align-items: center;
-            justify-content: center; /* Pusatkan ikon dalam butang */
-            background-color: #25D366; /* Warna hijau WhatsApp */
-            color: #fff;
-            padding: 15px; /* Kurangkan padding untuk butang ikon sahaja */
-            margin: 10px;
-            border-radius: 5px;
+            justify-content: center;
             text-decoration: none;
-            font-size: 1.5em; /* Besarkan ikon */
-            border: 1px solid #ffd700;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .community a:hover {
-            background-color: #1ebe57; /* Warna hijau lebih gelap semasa hover */
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            font-size: 2em; /* Besarkan ikon */
         }
 
         .community i {
-            color: #fff; /* Warna ikon putih */
+            color: #25D366; /* Warna hijau WhatsApp */
+            transition: color 0.3s; /* Transisi untuk hover */
+        }
+
+        .community a:hover i {
+            color: #1ebe57; /* Warna hijau lebih gelap semasa hover */
         }
 
         /* Animasi Pulse untuk Logo */
@@ -133,12 +126,12 @@
                 font-size: 1.8em; /* Kecilkan teks tajuk */
             }
 
-            .game-options a, .community a {
+            .game-options a {
                 display: flex; /* Tukar kepada flex untuk stack menegak */
                 width: 80%; /* Lebar penuh dengan margin auto */
                 margin: 10px auto;
-                font-size: 1em; /* Kecilkan teks atau ikon */
-                padding: 10px; /* Kurangkan padding untuk skrin kecil */
+                font-size: 1em; /* Kecilkan teks */
+                padding: 10px 20px;
             }
 
             .game-options img {
@@ -154,7 +147,7 @@
             }
 
             .community a {
-                font-size: 1.2em; /* Kecilkan ikon WhatsApp pada skrin kecil */
+                font-size: 1.5em; /* Kecilkan ikon WhatsApp pada skrin kecil */
             }
         }
     </style>
