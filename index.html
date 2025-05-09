@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kedai H - Pricelist Games</title>
-    <!-- FontAwesome untuk ikon Winrate Calculator -->
+    <!-- FontAwesome untuk ikon Winrate Calculator dan WhatsApp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -91,13 +91,14 @@
         .community a {
             display: inline-flex;
             align-items: center;
+            justify-content: center; /* Pusatkan ikon dalam butang */
             background-color: #25D366; /* Warna hijau WhatsApp */
             color: #fff;
-            padding: 15px 30px;
+            padding: 15px; /* Kurangkan padding untuk butang ikon sahaja */
             margin: 10px;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.5em; /* Besarkan ikon */
             border: 1px solid #ffd700;
             transition: background-color 0.3s, box-shadow 0.3s;
         }
@@ -105,6 +106,10 @@
         .community a:hover {
             background-color: #1ebe57; /* Warna hijau lebih gelap semasa hover */
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .community i {
+            color: #fff; /* Warna ikon putih */
         }
 
         /* Animasi Pulse untuk Logo */
@@ -132,8 +137,8 @@
                 display: flex; /* Tukar kepada flex untuk stack menegak */
                 width: 80%; /* Lebar penuh dengan margin auto */
                 margin: 10px auto;
-                font-size: 1em; /* Kecilkan teks */
-                padding: 10px 20px;
+                font-size: 1em; /* Kecilkan teks atau ikon */
+                padding: 10px; /* Kurangkan padding untuk skrin kecil */
             }
 
             .game-options img {
@@ -146,6 +151,10 @@
 
             .community h2 {
                 font-size: 1.5em; /* Kecilkan tajuk pada skrin kecil */
+            }
+
+            .community a {
+                font-size: 1.2em; /* Kecilkan ikon WhatsApp pada skrin kecil */
             }
         }
     </style>
@@ -177,7 +186,9 @@
 
     <section class="community">
         <h2>Join Our Community</h2>
-        <a href="https://chat.whatsapp.com/IYzrlrjtP1L2jikkTdiSBX">Join Sekarang</a>
+        <a href="https://chat.whatsapp.com/IYzrlrjtP1L2jikkTdiSBX">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </section>
 </body>
 </html>
