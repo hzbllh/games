@@ -77,6 +77,36 @@
             color: #ffd700;
         }
 
+        /* Gaya untuk Join Our Community */
+        .community {
+            margin: 30px 0;
+        }
+
+        .community h2 {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .community a {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366; /* Warna hijau WhatsApp */
+            color: #fff;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border: 1px solid #ffd700;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .community a:hover {
+            background-color: #1ebe57; /* Warna hijau lebih gelap semasa hover */
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
         /* Animasi Pulse untuk Logo */
         @keyframes pulse {
             0% { transform: scale(1); }
@@ -98,7 +128,7 @@
                 font-size: 1.8em; /* Kecilkan teks tajuk */
             }
 
-            .game-options a {
+            .game-options a, .community a {
                 display: flex; /* Tukar kepada flex untuk stack menegak */
                 width: 80%; /* Lebar penuh dengan margin auto */
                 margin: 10px auto;
@@ -112,6 +142,10 @@
 
             .game-options i {
                 font-size: 20px; /* Kecilkan ikon FontAwesome */
+            }
+
+            .community h2 {
+                font-size: 1.5em; /* Kecilkan tajuk pada skrin kecil */
             }
         }
     </style>
@@ -139,6 +173,11 @@
             <i class="fas fa-calculator"></i>
             Winrate Calculator
         </a>
+    </section>
+
+    <section class="community">
+        <h2>Join Our Community</h2>
+        <a href="https://chat.whatsapp.com/IYzrlrjtP1L2jikkTdiSBX">Join Sekarang</a>
     </section>
 </body>
 </html>
