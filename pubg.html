@@ -13,28 +13,26 @@
             padding: 20px;
             text-align: center;
         }
-
         header .logo {
             max-width: 100px;
             height: auto;
             margin: 0 auto;
         }
-
         header h2 {
             font-size: 2em;
             color: #fff;
             margin: 10px 0;
         }
-
         header p {
             font-size: 1.2em;
             color: #ccc;
         }
-
-        .pricelist {
-            margin: 20px 0;
+        .pricelist h3 {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-top: 20px;
+            margin-bottom: 15px;
         }
-
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -42,7 +40,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .item {
             background-color: #1e2a44;
             padding: 15px;
@@ -56,38 +53,30 @@
             animation: fadeIn 0.5s forwards;
             animation-delay: calc(var(--index) * 0.1s);
         }
-
         .item span:first-child {
             font-weight: bold;
         }
-
         .item span:last-child {
             color: #ffd700;
         }
-
         .info p {
             font-size: 1.1em;
             margin: 10px 0;
         }
-
         footer {
             margin-top: 20px;
         }
-
         footer p {
             font-size: 1.2em;
             margin: 10px 0;
         }
-
         footer a {
             color: #ffd700;
             text-decoration: none;
         }
-
         footer a:hover {
             text-decoration: underline;
         }
-
         .whatsapp-button {
             display: inline-block;
             background-color: #25D366;
@@ -99,12 +88,10 @@
             margin-top: 10px;
             transition: background-color 0.3s, transform 0.3s;
         }
-
         .whatsapp-button:hover {
             background-color: #1ebe57;
             transform: scale(1.05);
         }
-
         .back-button {
             display: inline-block;
             background-color: #1e2a44;
@@ -117,44 +104,22 @@
             border: 1px solid #ffd700;
             transition: background-color 0.3s, transform 0.3s;
         }
-
         .back-button:hover {
             background-color: #2a3b5a;
             transform: scale(1.05);
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         @media (max-width: 600px) {
-            header .logo {
-                max-width: 80px;
-            }
-
-            header h2 {
-                font-size: 1.5em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .item {
-                font-size: 1em;
-                padding: 10px;
-            }
-
-            .whatsapp-button, .back-button {
-                font-size: 0.9em;
-                padding: 8px 15px;
-                margin-top: 10px;
-            }
+            header .logo { max-width: 80px; }
+            header h2 { font-size: 1.5em; }
+            header p { font-size: 1em; }
+            .pricelist h3 { font-size: 1.3em; }
+            .grid { grid-template-columns: 1fr; }
+            .item { font-size: 1em; padding: 10px; }
+            .whatsapp-button, .back-button { font-size: 0.9em; padding: 8px 15px; margin-top: 10px; }
         }
     </style>
 </head>
@@ -164,26 +129,25 @@
         <h2>Pricelist PUBG</h2>
         <p>Malaysia (Via ID & Server)</p>
     </header>
-    
     <section class="pricelist">
-        <div class="grid">
-            <div class="item" style="--index: 0;"><span>60 UC</span><span>RM 4</span></div>
-            <div class="item" style="--index: 1;"><span>325 UC</span><span>RM 19</span></div>
-            <div class="item" style="--index: 2;"><span>660 UC</span><span>RM 38</span></div>
-            <div class="item" style="--index: 3;"><span>1500 UC</span><span>RM 85</span></div>
-            <div class="item" style="--index: 4;"><span>3000 UC</span><span>RM 165</span></div>
-            <div class="item" style="--index: 5;"><span>6000 UC</span><span>RM 325</span></div>
-            <div class="item" style="--index: 6;"><span>9000 UC</span><span>RM 485</span></div>
+        <div class="diamond">
+            <h3>Pricelist PUBG</h3>
+            <div class="grid">
+                <div class="item" style="--index: 0;"><span>60 UC</span><span>RM 3.90</span></div>
+                <div class="item" style="--index: 1;"><span>300+25 UC</span><span>RM 19</span></div>
+                <div class="item" style="--index: 2;"><span>600+60 UC</span><span>RM 38</span></div>
+                <div class="item" style="--index: 3;"><span>1500+300 UC</span><span>RM 99</span></div>
+                <div class="item" style="--index: 4;"><span>3000+850 UC</span><span>RM 198</span></div>
+                <div class="item" style="--index: 5;"><span>6000+2100 UC</span><span>RM 397</span></div>
+            </div>
         </div>
     </section>
-    
     <section class="info">
         <p><strong>Kaedah Pembayaran:</strong> Online Banking / Touch N Go</p>
     </section>
-    
     <footer>
         <p><strong>↓↓ beli disini ↓↓</strong></p>
-        <a href="https://wa.me/60195080896?text=Nak%20Top-up%20PUBG" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
+        <a href="https://wa.me/60195080896?text=Nak%20PUBG%20UC" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
         <br>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
