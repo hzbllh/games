@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kedai H - Pricelist Games</title>
-    <!-- FontAwesome untuk ikon Winrate Calculator dan WhatsApp -->
+    <!-- FontAwesome untuk ikon Winrate Calculator, WhatsApp, dan TikTok -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -94,15 +94,25 @@
             justify-content: center;
             text-decoration: none;
             font-size: 2em; /* Besarkan ikon */
+            margin: 0 10px; /* Jarak antara ikon */
         }
 
-        .community i {
+        .community i.whatsapp {
             color: #25D366; /* Warna hijau WhatsApp */
             transition: color 0.3s; /* Transisi untuk hover */
         }
 
-        .community a:hover i {
+        .community a:hover i.whatsapp {
             color: #1ebe57; /* Warna hijau lebih gelap semasa hover */
+        }
+
+        .community i.tiktok {
+            color: #69C9D0; /* Warna biru TikTok */
+            transition: color 0.3s; /* Transisi untuk hover */
+        }
+
+        .community a:hover i.tiktok {
+            color: #EE1D52; /* Warna merah TikTok semasa hover */
         }
 
         /* Animasi Pulse untuk Logo */
@@ -147,7 +157,7 @@
             }
 
             .community a {
-                font-size: 1.5em; /* Kecilkan ikon WhatsApp pada skrin kecil */
+                font-size: 1.5em; /* Kecilkan ikon WhatsApp dan TikTok pada skrin kecil */
             }
         }
     </style>
@@ -184,7 +194,10 @@
     <section class="community">
         <h2>Join Our Community</h2>
         <a href="https://chat.whatsapp.com/IYzrlrjtP1L2jikkTdiSBX">
-            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-whatsapp whatsapp"></i>
+        </a>
+        <a href="https://www.tiktok.com/@kedai.h1?_t=ZS-8wNVae7rV5M&_r=1">
+            <i class="fab fa-tiktok tiktok"></i>
         </a>
     </section>
 </body>
