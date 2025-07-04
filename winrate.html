@@ -3,142 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H - Winrate Calculator</title>
+    <title>Kedai H - Winrate Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0a1a2e;
-            color: #fff;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a1a2e 0%, #1e3a8a 100%);
+            color: #fff;
             padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
             text-align: center;
+            margin-bottom: 30px;
         }
 
         header .logo {
-            max-width: 100px;
+            max-width: 120px;
             height: auto;
-            margin: 0 auto;
+            transition: transform 0.3s ease;
         }
 
-        header h2 {
-            font-size: 2em;
-            color: #fff;
+        header .logo:hover {
+            transform: scale(1.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #ffd700;
             margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         header p {
             font-size: 1.2em;
-            color: #ccc;
+            color: #d1d5db;
         }
 
         .calculator {
-            background-color: #1e2a44;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid #ffd700;
-            text-align: center;
             max-width: 400px;
             width: 100%;
             margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             opacity: 0;
-            animation: fadeIn 0.5s forwards;
+            animation: fadeIn 0.5s ease forwards;
         }
 
         .calculator h2 {
-            margin-bottom: 20px;
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #ffd700;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
             margin: 10px 0 5px;
             font-size: 1.1em;
-            color: #ccc;
+            color: #d1d5db;
         }
 
         input {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
             border: 1px solid #ffd700;
-            border-radius: 5px;
-            background-color: #2a3b5a;
+            border-radius: 8px;
+            background: #2a3b5a;
             color: #fff;
             font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #e6c200;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
         }
 
         button {
-            padding: 10px 20px;
-            background-color: #ffd700;
+            padding: 12px 25px;
+            background: #ffd700;
             color: #0a1a2e;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 1.1em;
-            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         button:hover {
-            background-color: #e6c200;
+            background: #e6c200;
             transform: scale(1.05);
         }
 
         #result {
             margin-top: 20px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1em;
             color: #ffd700;
         }
 
         footer {
-            margin-top: 20px;
+            margin-top: auto;
+            padding: 20px 0;
+            text-align: center;
         }
 
         footer p {
             font-size: 1.2em;
-            margin: 10px 0;
-        }
-
-        footer a {
             color: #ffd700;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            margin-bottom: 10px;
         }
 
         .back-button {
             display: inline-block;
-            background-color: #1e2a44;
+            background: #1e2a44;
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1.1em;
             text-decoration: none;
-            margin-top: 20px;
             border: 1px solid #ffd700;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .back-button:hover {
-            background-color: #2a3b5a;
+            background: #2a3b5a;
             transform: scale(1.05);
         }
 
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffd700;
+            color: #0a1a2e;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            display: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-to-top.visible {
+            display: block;
+            opacity: 1;
+        }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 600px) {
-            header .logo {
-                max-width: 80px;
-            }
-
-            header h2 {
-                font-size: 1.5em;
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
             }
 
             header p {
@@ -147,21 +189,21 @@
 
             .calculator {
                 padding: 15px;
-                max-width: 300px;
+                max-width: 90%;
             }
 
             .calculator h2 {
-                font-size: 1.3em;
+                font-size: 1.5em;
             }
 
             input {
                 font-size: 0.9em;
-                padding: 6px;
+                padding: 8px;
             }
 
             button {
-                font-size: 0.9em;
-                padding: 8px 15px;
+                font-size: 1em;
+                padding: 10px 20px;
             }
 
             #result {
@@ -169,9 +211,8 @@
             }
 
             .back-button {
-                font-size: 0.9em;
-                padding: 8px 15px;
-                margin-top: 10px;
+                font-size: 1em;
+                padding: 10px 20px;
             }
         }
     </style>
@@ -179,8 +220,8 @@
 <body>
     <header>
         <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
-        <h2>Winrate Calculator</h2>
-        <p>Kira bilangan kemenangan tambahan untuk winrate sasaran</p>
+        <h1>Winrate Calculator</h1>
+        <p>Kira bilangan kemenangan tambahan untuk win rate sasaran</p>
     </header>
 
     <div class="calculator">
@@ -202,9 +243,11 @@
     </div>
 
     <footer>
-        <p> </p>
+        <p>&nbsp;</p>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
     <script>
         function calculate() {
@@ -249,6 +292,20 @@
             } else {
                 resultDiv.innerText = `Anda perlu ${additionalWins} kemenangan tambahan untuk mencapai win rate ${targetWinRate}%.`;
             }
+        }
+
+        // Scroll to Top Button
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (window.scrollY > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
