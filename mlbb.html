@@ -3,326 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H - Pricelist Diamond MLBB</title>
+    <title>H - Pricelist Mobile Legends</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0a1a2e;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a1a2e, #1e2a44, #ffd70022);
             color: #fff;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             text-align: center;
+            min-height: 100vh;
         }
-
-        header .logo {
-            max-width: 100px;
-            height: auto;
-            margin: 0 auto;
-        }
-
-        header h2 {
-            font-size: 2em;
-            color: #fff;
-            margin: 10px 0;
-        }
-
-        header p {
-            font-size: 1.2em;
-            color: #ccc;
-        }
-
-        .notice {
-            background-color: #2a3b5a;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ffd700;
-            margin: 20px 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .notice h3 {
-            font-size: 1.4em;
-            color: #ffd700;
-            margin: 0 0 10px 0;
-        }
-
-        .notice p {
-            font-size: 1.1em;
-            color: #fff;
-            margin: 0;
-        }
-
-        .pricelist {
-            margin: 20px 0;
-        }
-
-        .recommended h3 {
-            font-size: 1.5em;
-            color: #ffd700;
-            margin-bottom: 15px;
-        }
-
-        .weekly h3 {
-            font-size: 1.5em;
-            color: #ffd700;
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-
-        .diamond h3 {
-            font-size: 1.5em;
-            color: #ffd700;
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-
-        .request {
-            background-color: #1e2a44;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ffd700;
-            margin: 20px 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .request h3 {
-            font-size: 1.4em;
-            color: #ffd700;
-            margin: 0 0 10px 0;
-        }
-
-        .request a {
-            display: inline-block;
-            background-color: #25D366;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .request a:hover {
-            background-color: #1ebe57;
-            transform: scale(1.05);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .item {
-            background-color: #1e2a44;
-            padding: 15px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1em;
-            border: 1px solid #ffd700;
-            opacity: 0;
-            animation: fadeIn 0.5s forwards;
-            animation-delay: calc(var(--index) * 0.1s);
-        }
-
-        .item span:first-child {
-            font-weight: bold;
-        }
-
-        .item span:last-child {
-            color: #ffd700;
-        }
-
-        .info p {
-            font-size: 1.1em;
-            margin: 10px 0;
-        }
-
-        footer {
-            margin-top: 20px;
-        }
-
-        footer p {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .whatsapp-button {
-            display: inline-block;
-            background-color: #25D366;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #1ebe57;
-            transform: scale(1.05);
-        }
-
-        .back-button {
-            display: inline-block;
-            background-color: #1e2a44;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            text-decoration: none;
-            margin-top: 20px;
-            border: 1px solid #ffd700;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #2a3b5a;
-            transform: scale(1.05);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        .header-section { padding: 60px 20px; border-bottom: 3px solid #ffd700; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
+        .header-section .logo { max-width: 120px; height: auto; margin: 0 auto; animation: pulse 2s infinite; transition: transform 0.3s; }
+        .header-section .logo:hover { transform: scale(1.1); }
+        .header-section h1 { font-size: 2.8em; margin: 15px 0; color: #fff; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); font-weight: 600; }
+        .pricelist { margin: 40px 0; }
+        .pricelist h2 { font-size: 2.2em; color: #ffd700; margin-bottom: 20px; font-weight: 600; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
+        .item { background: #1e2a44; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 1.1em; border: 2px solid #ffd700; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; opacity: 0; animation: fadeInUp 0.5s forwards; }
+        .item:nth-child(1) { animation-delay: 0.1s; }
+        .item:nth-child(2) { animation-delay: 0.2s; }
+        .item:nth-child(3) { animation-delay: 0.3s; }
+        .item:nth-child(4) { animation-delay: 0.4s; }
+        .item:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3); }
+        .item span:first-child { font-weight: bold; }
+        .item span:last-child { color: #ffd700; }
+        .info p { font-size: 1.1em; margin: 10px 0; }
+        .footer { margin-top: 40px; }
+        .footer p { font-size: 1.2em; margin: 10px 0; }
+        .footer a { color: #ffd700; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .whatsapp-button { display: inline-block; background: #25D366; color: #fff; padding: 12px 20px; border-radius: 8px; font-size: 1.1em; text-decoration: none; margin-top: 10px; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        .whatsapp-button:hover { background: #1ebe57; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(30, 190, 87, 0.3); }
+        .back-button { display: inline-block; background: #1e2a44; color: #fff; padding: 12px 20px; border-radius: 8px; font-size: 1em; text-decoration: none; margin-top: 10px; border: 2px solid #ffd700; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        .back-button:hover { background: #2a3b5a; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3); }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 600px) {
-            header .logo {
-                max-width: 80px;
-            }
-
-            header h2 {
-                font-size: 1.5em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .notice, .request {
-                padding: 10px;
-            }
-
-            .notice h3, .request h3 {
-                font-size: 1.2em;
-            }
-
-            .notice p, .request a {
-                font-size: 1em;
-            }
-
-            .recommended h3, .weekly h3, .diamond h3 {
-                font-size: 1.3em;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .item {
-                font-size: 1em;
-                padding: 10px;
-            }
-
-            .whatsapp-button, .back-button {
-                font-size: 0.9em;
-                padding: 8px 15px;
-                margin-top: 10px;
-            }
+            .header-section { padding: 30px 10px; }
+            .header-section .logo { max-width: 80px; }
+            .header-section h1 { font-size: 1.8em; }
+            .pricelist h2 { font-size: 1.5em; }
+            .grid { grid-template-columns: 1fr; }
+            .item { font-size: 1em; padding: 10px; }
+            .whatsapp-button, .back-button { font-size: 0.9em; padding: 8px 15px; }
         }
     </style>
 </head>
 <body>
-    <header>
+    <section class="header-section">
         <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
-        <h2>Pricelist Diamond MLBB</h2>
-        <p>Malaysia (Via ID & Server)</p>
-    </header>
-
-    <section class="notice">
-        <h3>Notis Kenaikan Harga</h3>
-        <p>Maaf atas kenaikan harga diamond MLBB akibat patch terkini daripada pihak Moonton. Terima kasih atas sokongan dan pemahaman anda!</p>
+        <h1>Pricelist Mobile Legends</h1>
     </section>
-    
     <section class="pricelist">
-        <!-- Bahagian Recommended Recharge Event Task -->
-        <div class="recommended">
-            <h3>Recommended Recharge Event Task</h3>
-            <div class="grid">
-                <div class="item" style="--index: 0;"><span>284 Diamonds</span><span>RM 20.31</span></div>
-                <div class="item" style="--index: 1;"><span>2 Weekly + 56 Diamonds</span><span>RM 21.30</span></div>
-                <div class="item" style="--index: 2;"><span>3 Weekly</span><span>RM 26</span></div>
-            </div>
-        </div>
-
-        <!-- Bahagian Weekly Diamond Pass -->
-        <div class="weekly">
-            <h3>Weekly Diamond Pass</h3>
-            <div class="grid">
-                <div class="item" style="--index: 3;"><span>Weekly Pass</span><span>RM 8.68</span></div>
-                <div class="item" style="--index: 4;"><span>Weekly Pass x3</span><span>RM 26</span></div>
-                <div class="item" style="--index: 5;"><span>Weekly Pass x10</span><span>RM 86</span></div>
-            </div>
-        </div>
-
-        <!-- Bahagian Pricelist Diamond -->
-        <div class="diamond">
-            <h3>Pricelist Diamond</h3>
-            <div class="grid">
-                <div class="item" style="--index: 6;"><span>140 Diamonds</span><span>RM 10.14</span></div>
-                <div class="item" style="--index: 7;"><span>284 Diamonds</span><span>RM 20.31</span></div>
-                <div class="item" style="--index: 8;"><span>355 Diamonds</span><span>RM 25.42</span></div>
-                <div class="item" style="--index: 9;"><span>429 Diamonds</span><span>RM 30.06</span></div>
-                <div class="item" style="--index: 10;"><span>569 Diamonds</span><span>RM 40.24</span></div>
-                <div class="item" style="--index: 11;"><span>716 Diamonds</span><span>RM 50.83</span></div>
-                <div class="item" style="--index: 12;"><span>1085 Diamonds</span><span>RM 77.24</span></div>
-                <div class="item" style="--index: 13;"><span>1446 Diamonds</span><span>RM 101.35</span></div>
-                <div class="item" style="--index: 14;"><span>1875 Diamonds</span><span>RM 131.44</span></div>
-                <div class="item" style="--index: 15;"><span>2162 Diamonds</span><span>RM 152.18</span></div>
-                <div class="item" style="--index: 16;"><span>2976 Diamonds</span><span>RM 203.29</span></div>
-                <div class="item" style="--index: 17;"><span>3345 Diamonds</span><span>RM 229.73</span></div>
-                <div class="item" style="--index: 18;"><span>4047 Diamonds</span><span>RM 279.53</span></div>
-                <div class="item" style="--index: 19;"><span>5138 Diamonds</span><span>RM 355.46</span></div>
-                <div class="item" style="--index: 20;"><span>6092 Diamonds</span><span>RM 416.75</span></div>
-                <div class="item" style="--index: 21;"><span>7502 Diamonds</span><span>RM 507.28</span></div>
-                <div class="item" style="--index: 22;"><span>9377 Diamonds</span><span>RM 638.72</span></div>
-                <div class="item" style="--index: 23;"><span>10478 Diamonds</span><span>RM 710.57</span></div>
-            </div>
+        <h2>Pricelist Mobile Legends</h2>
+        <p style="color: #ff4444; font-weight: bold;">*Notis: Harga telah dinaikkan bermula 1 Julai 2025*</p>
+        <div class="grid">
+            <div class="item"><span>72 Diamonds</span><span>RM 2.50</span></div>
+            <div class="item"><span>172 Diamonds</span><span>RM 6.00</span></div>
+            <div class="item"><span>366 Diamonds</span><span>RM 12.50</span></div>
+            <div class="item"><span>772 Diamonds</span><span>RM 25.00</span></div>
         </div>
     </section>
-
-    <section class="request">
-        <h3>Full Pricelist Request Di Whatsapp</h3>
-        <a href="https://wa.me/60195080896?text=Full%20Pricelist" class="whatsapp-button">Full Pricelist</a>
-    </section>
-    
     <section class="info">
         <p><strong>Kaedah Pembayaran:</strong> Online Banking / Touch N Go</p>
     </section>
-    
-    <footer>
+    <section class="footer">
         <p><strong>↓↓ beli disini ↓↓</strong></p>
-        <a href="https://wa.me/60195080896?text=Nak%20Diamond" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
+        <a href="https://wa.me/60195080896?text=Nak%20Mobile%20Legends%20Diamonds" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
         <br>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
-    </footer>
+    </section>
 </body>
 </html>
