@@ -3,154 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H - Pricelist Genshin Impact</title>
+    <title>Kedai H - Pricelist Genshin Impact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0a1a2e;
-            color: #fff;
+        * {
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
         }
-        header .logo {
-            max-width: 100px;
-            height: auto;
-            margin: 0 auto;
-        }
-        header h2 {
-            font-size: 2em;
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a1a2e 0%, #1e3a8a 100%);
             color: #fff;
-            margin: 10px 0;
+            padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header .logo {
+            max-width: 120px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        header .logo:hover {
+            transform: scale(1.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #ffd700;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
         header p {
             font-size: 1.2em;
-            color: #ccc;
+            color: #d1d5db;
         }
-        .pricelist h3 {
-            font-size: 1.5em;
+
+        .pricelist {
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .diamond h3 {
+            font-size: 1.8em;
             color: #ffd700;
-            margin-top: 20px;
-            margin-bottom: 15px;
+            margin: 20px 0;
+            text-align: center;
         }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
         }
+
         .item {
-            background-color: #1e2a44;
+            background: #1e2a44;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 10px;
+            border: 1px solid #ffd700;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 1.1em;
-            border: 1px solid #ffd700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 0;
-            animation: fadeIn 0.5s forwards;
-            animation-delay: calc(var(--index) * 0.1s);
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: calc(attr(data-index) * 0.1s);
         }
+
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+        }
+
         .item span:first-child {
-            font-weight: bold;
+            font-weight: 600;
         }
+
         .item span:last-child {
             color: #ffd700;
+            font-weight: 700;
         }
+
         .info p {
-            font-size: 1.1em;
-            margin: 10px 0;
+            font-size: 1.2em;
+            color: #d1d5db;
+            margin: 20px 0;
+            text-align: center;
         }
+
         footer {
-            margin-top: 20px;
+            margin-top: auto;
+            padding: 20px 0;
+            text-align: center;
         }
+
         footer p {
             font-size: 1.2em;
-            margin: 10px 0;
-        }
-        footer a {
             color: #ffd700;
-            text-decoration: none;
+            margin-bottom: 10px;
         }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        .whatsapp-button {
+
+        .whatsapp-button, .back-button {
             display: inline-block;
-            background-color: #25D366;
+            background: #25D366;
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 8px;
             font-size: 1.1em;
             text-decoration: none;
-            margin-top: 10px;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
-        .whatsapp-button:hover {
-            background-color: #1ebe57;
+
+        .whatsapp-button:hover, .back-button:hover {
+            background: #1ebe57;
             transform: scale(1.05);
         }
+
         .back-button {
-            display: inline-block;
-            background-color: #1e2a44;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            text-decoration: none;
-            margin-top: 20px;
+            background: #1e2a44;
             border: 1px solid #ffd700;
-            transition: background-color 0.3s, transform 0.3s;
         }
-        .back-button:hover {
-            background-color: #2a3b5a;
-            transform: scale(1.05);
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffd700;
+            color: #0a1a2e;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            display: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
+
+        .scroll-to-top:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-to-top.visible {
+            display: block;
+            opacity: 1;
+        }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @media (max-width: 600px) {
-            header .logo { max-width: 80px; }
-            header h2 { font-size: 1.5em; }
-            header p { font-size: 1em; }
-            .pricelist h3 { font-size: 1.3em; }
-            .grid { grid-template-columns: 1fr; }
-            .item { font-size: 1em; padding: 10px; }
-            .whatsapp-button, .back-button { font-size: 0.9em; padding: 8px 15px; margin-top: 10px; }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .diamond h3 {
+                font-size: 1.5em;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .item {
+                font-size: 1em;
+                padding: 12px;
+            }
+
+            .whatsapp-button, .back-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
-        <h2>Pricelist Genshin Impact</h2>
+        <h1>Pricelist Genshin Impact</h1>
         <p>Malaysia (Via UID & Server)</p>
     </header>
+
     <section class="pricelist">
         <div class="diamond">
             <h3>Pricelist Genshin Impact</h3>
             <div class="grid">
-                <div class="item" style="--index: 0;"><span>60 Genesis Crystals</span><span>RM 3.19</span></div>
-                <div class="item" style="--index: 1;"><span>330 Genesis Crystals</span><span>RM 16.27</span></div>
-                <div class="item" style="--index: 2;"><span>1090 Genesis Crystals</span><span>RM 48.97</span></div>
-                <div class="item" style="--index: 3;"><span>2240 Genesis Crystals</span><span>RM 106.19</span></div>
-                <div class="item" style="--index: 4;"><span>3880 Genesis Crystals</span><span>RM 163.42</span></div>
-                <div class="item" style="--index: 5;"><span>8080 Genesis Crystals</span><span>RM 326.92</span></div>
-                <div class="item" style="--index: 6;"><span>Welkin Moon</span><span>RM 17</span></div>
+                <div class="item" data-index="0"><span>60 Genesis Crystals</span><span>RM 3.19</span></div>
+                <div class="item" data-index="1"><span>330 Genesis Crystals</span><span>RM 16.27</span></div>
+                <div class="item" data-index="2"><span>1090 Genesis Crystals</span><span>RM 48.97</span></div>
+                <div class="item" data-index="3"><span>2240 Genesis Crystals</span><span>RM 106.19</span></div>
+                <div class="item" data-index="4"><span>3880 Genesis Crystals</span><span>RM 163.42</span></div>
+                <div class="item" data-index="5"><span>8080 Genesis Crystals</span><span>RM 326.92</span></div>
+                <div class="item" data-index="6"><span>Welkin Moon</span><span>RM 17</span></div>
             </div>
         </div>
     </section>
+
     <section class="info">
         <p><strong>Kaedah Pembayaran:</strong> Online Banking / Touch N Go</p>
     </section>
+
     <footer>
-        <p><strong>↓↓ beli disini ↓↓</strong></p>
+        <p><strong>↓↓ Beli Di Sini ↓↓</strong></p>
         <a href="https://wa.me/60195080896?text=Nak%20Genshin%20Impact%20Crystals" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
         <br>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Scroll to Top Button
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (window.scrollY > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
