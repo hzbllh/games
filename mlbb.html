@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a1a2e 0%, #1e3a8a 100%);
+            background: linear-gradient(135deg, #0a1a2e, #1e2a44, #ffd70022);
             color: #fff;
             padding: 20px;
             line-height: 1.6;
@@ -32,7 +32,7 @@
         header .logo {
             max-width: 120px;
             height: auto;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
 
         header .logo:hover {
@@ -40,10 +40,11 @@
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             color: #ffd700;
-            margin: 10px 0;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            margin: 15px 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
         }
 
         header p {
@@ -51,39 +52,18 @@
             color: #d1d5db;
         }
 
-        .notice {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #ffd700;
-            max-width: 700px;
-            margin: 20px auto;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .notice h3 {
-            font-size: 1.5em;
-            color: #ffd700;
-            margin-bottom: 10px;
-        }
-
-        .notice p {
-            font-size: 1.1em;
-            color: #e5e7eb;
-        }
-
         .pricelist {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 40px 0;
         }
 
         .recommended h3, .weekly h3, .diamond h3 {
-            font-size: 1.8em;
+            font-size: 2.2em;
             color: #ffd700;
             margin: 20px 0;
             text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .grid {
@@ -94,22 +74,45 @@
 
         .item {
             background: #1e2a44;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #ffd700;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid #ffd700;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 1.1em;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             opacity: 0;
-            animation: fadeIn 0.5s ease forwards;
-            animation-delay: calc(attr(data-index) * 0.1s);
+            animation: fadeInUp 0.5s forwards;
         }
 
+        .item:nth-child(1) { animation-delay: 0.1s; }
+        .item:nth-child(2) { animation-delay: 0.2s; }
+        .item:nth-child(3) { animation-delay: 0.3s; }
+        .item:nth-child(4) { animation-delay: 0.4s; }
+        .item:nth-child(5) { animation-delay: 0.5s; }
+        .item:nth-child(6) { animation-delay: 0.6s; }
+        .item:nth-child(7) { animation-delay: 0.7s; }
+        .item:nth-child(8) { animation-delay: 0.8s; }
+        .item:nth-child(9) { animation-delay: 0.9s; }
+        .item:nth-child(10) { animation-delay: 1.0s; }
+        .item:nth-child(11) { animation-delay: 1.1s; }
+        .item:nth-child(12) { animation-delay: 1.2s; }
+        .item:nth-child(13) { animation-delay: 1.3s; }
+        .item:nth-child(14) { animation-delay: 1.4s; }
+        .item:nth-child(15) { animation-delay: 1.5s; }
+        .item:nth-child(16) { animation-delay: 1.6s; }
+        .item:nth-child(17) { animation-delay: 1.7s; }
+        .item:nth-child(18) { animation-delay: 1.8s; }
+        .item:nth-child(19) { animation-delay: 1.9s; }
+        .item:nth-child(20) { animation-delay: 2.0s; }
+        .item:nth-child(21) { animation-delay: 2.1s; }
+        .item:nth-child(22) { animation-delay: 2.2s; }
+        .item:nth-child(23) { animation-delay: 2.3s; }
+
         .item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
         }
 
         .item span:first-child {
@@ -119,45 +122,6 @@
         .item span:last-child {
             color: #ffd700;
             font-weight: 700;
-        }
-
-        .request {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #ffd700;
-            max-width: 700px;
-            margin: 20px auto;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .request h3 {
-            font-size: 1.5em;
-            color: #ffd700;
-            margin-bottom: 15px;
-        }
-
-        .request a, .whatsapp-button, .back-button {
-            display: inline-block;
-            background: #25D366;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-size: 1.1em;
-            text-decoration: none;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .request a:hover, .whatsapp-button:hover, .back-button:hover {
-            background: #1ebe57;
-            transform: scale(1.05);
-        }
-
-        .back-button {
-            background: #1e2a44;
-            border: 1px solid #ffd700;
         }
 
         .info p {
@@ -179,50 +143,52 @@
             margin-bottom: 10px;
         }
 
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ffd700;
-            color: #0a1a2e;
-            padding: 10px 15px;
-            border-radius: 50%;
-            font-size: 1.2em;
-            cursor: pointer;
-            display: none;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+        .whatsapp-button, .back-button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .scroll-to-top:hover {
-            transform: scale(1.1);
+        .whatsapp-button {
+            background: #25D366;
+            color: #fff;
         }
 
-        .scroll-to-top.visible {
-            display: block;
-            opacity: 1;
+        .whatsapp-button:hover {
+            background: #1ebe57;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(30, 190, 87, 0.3);
         }
 
-        @keyframes fadeIn {
+        .back-button {
+            background: #1e2a44;
+            color: #fff;
+            border: 2px solid #ffd700;
+            margin-top: 10px;
+        }
+
+        .back-button:hover {
+            background: #2a3b5a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
 
             header p {
                 font-size: 1em;
-            }
-
-            .notice, .request {
-                padding: 15px;
-                max-width: 90%;
-            }
-
-            .notice h3, .request h3 {
-                font-size: 1.3em;
             }
 
             .recommended h3, .weekly h3, .diamond h3 {
@@ -235,12 +201,12 @@
 
             .item {
                 font-size: 1em;
-                padding: 12px;
+                padding: 10px;
             }
 
-            .request a, .whatsapp-button, .back-button {
-                font-size: 1em;
-                padding: 10px 20px;
+            .whatsapp-button, .back-button {
+                font-size: 0.9em;
+                padding: 8px 15px;
             }
         }
     </style>
@@ -252,58 +218,48 @@
         <p>Malaysia (Via ID & Server)</p>
     </header>
 
-    <section class="notice">
-        <h3>Notis Kenaikan Harga</h3>
-        <p>Maaf atas kenaikan harga diamond MLBB akibat patch terkini daripada pihak Moonton. Terima kasih atas sokongan dan pemahaman anda!</p>
-    </section>
-
     <section class="pricelist">
         <div class="recommended">
             <h3>Recommended Recharge Event Task</h3>
             <div class="grid">
-                <div class="item" data-index="0"><span>284 Diamonds</span><span>RM 20.31</span></div>
-                <div class="item" data-index="1"><span>2 Weekly + 56 Diamonds</span><span>RM 21.30</span></div>
-                <div class="item" data-index="2"><span>3 Weekly</span><span>RM 26</span></div>
+                <div class="item"><span>284 Diamonds</span><span>RM 20.31</span></div>
+                <div class="item"><span>2 Weekly + 56 Diamonds</span><span>RM 21.30</span></div>
+                <div class="item"><span>3 Weekly</span><span>RM 26</span></div>
             </div>
         </div>
 
         <div class="weekly">
             <h3>Weekly Diamond Pass</h3>
             <div class="grid">
-                <div class="item" data-index="3"><span>Weekly Pass</span><span>RM 8.68</span></div>
-                <div class="item" data-index="4"><span>Weekly Pass x3</span><span>RM 26</span></div>
-                <div class="item" data-index="5"><span>Weekly Pass x10</span><span>RM 86</span></div>
+                <div class="item"><span>Weekly Pass</span><span>RM 8.68</span></div>
+                <div class="item"><span>Weekly Pass x3</span><span>RM 26</span></div>
+                <div class="item"><span>Weekly Pass x10</span><span>RM 86</span></div>
             </div>
         </div>
 
         <div class="diamond">
             <h3>Pricelist Diamond</h3>
             <div class="grid">
-                <div class="item" data-index="6"><span>140 Diamonds</span><span>RM 10.14</span></div>
-                <div class="item" data-index="7"><span>284 Diamonds</span><span>RM 20.31</span></div>
-                <div class="item" data-index="8"><span>355 Diamonds</span><span>RM 25.42</span></div>
-                <div class="item" data-index="9"><span>429 Diamonds</span><span>RM 30.06</span></div>
-                <div class="item" data-index="10"><span>569 Diamonds</span><span>RM 40.24</span></div>
-                <div class="item" data-index="11"><span>716 Diamonds</span><span>RM 50.83</span></div>
-                <div class="item" data-index="12"><span>1085 Diamonds</span><span>RM 77.24</span></div>
-                <div class="item" data-index="13"><span>1446 Diamonds</span><span>RM 101.35</span></div>
-                <div class="item" data-index="14"><span>1875 Diamonds</span><span>RM 131.44</span></div>
-                <div class="item" data-index="15"><span>2162 Diamonds</span><span>RM 152.18</span></div>
-                <div class="item" data-index="16"><span>2976 Diamonds</span><span>RM 203.29</span></div>
-                <div class="item" data-index="17"><span>3345 Diamonds</span><span>RM 229.73</span></div>
-                <div class="item" data-index="18"><span>4047 Diamonds</span><span>RM 279.53</span></div>
-                <div class="item" data-index="19"><span>5138 Diamonds</span><span>RM 355.46</span></div>
-                <div class="item" data-index="20"><span>6092 Diamonds</span><span>RM 416.75</span></div>
-                <div class="item" data-index="21"><span>7502 Diamonds</span><span>RM 507.28</span></div>
-                <div class="item" data-index="22"><span>9377 Diamonds</span><span>RM 638.72</span></div>
-                <div class="item" data-index="23"><span>10478 Diamonds</span><span>RM 710.57</span></div>
+                <div class="item"><span>140 Diamonds</span><span>RM 10.14</span></div>
+                <div class="item"><span>284 Diamonds</span><span>RM 20.31</span></div>
+                <div class="item"><span>355 Diamonds</span><span>RM 25.42</span></div>
+                <div class="item"><span>429 Diamonds</span><span>RM 30.06</span></div>
+                <div class="item"><span>569 Diamonds</span><span>RM 40.24</span></div>
+                <div class="item"><span>716 Diamonds</span><span>RM 50.83</span></div>
+                <div class="item"><span>1085 Diamonds</span><span>RM 77.24</span></div>
+                <div class="item"><span>1446 Diamonds</span><span>RM 101.35</span></div>
+                <div class="item"><span>1875 Diamonds</span><span>RM 131.44</span></div>
+                <div class="item"><span>2162 Diamonds</span><span>RM 152.18</span></div>
+                <div class="item"><span>2976 Diamonds</span><span>RM 203.29</span></div>
+                <div class="item"><span>3345 Diamonds</span><span>RM 229.73</span></div>
+                <div class="item"><span>4047 Diamonds</span><span>RM 279.53</span></div>
+                <div class="item"><span>5138 Diamonds</span><span>RM 355.46</span></div>
+                <div class="item"><span>6092 Diamonds</span><span>RM 416.75</span></div>
+                <div class="item"><span>7502 Diamonds</span><span>RM 507.28</span></div>
+                <div class="item"><span>9377 Diamonds</span><span>RM 638.72</span></div>
+                <div class="item"><span>10478 Diamonds</span><span>RM 710.57</span></div>
             </div>
         </div>
-    </section>
-
-    <section class="request">
-        <h3>Full Pricelist Request Di Whatsapp</h3>
-        <a href="https://wa.me/60195080896?text=Full%20Pricelist" class="whatsapp-button">Full Pricelist</a>
     </section>
 
     <section class="info">
@@ -317,22 +273,8 @@
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
 
-    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
-
     <script>
-        // Scroll to Top Button
-        window.addEventListener('scroll', () => {
-            const scrollButton = document.querySelector('.scroll-to-top');
-            if (window.scrollY > 300) {
-                scrollButton.classList.add('visible');
-            } else {
-                scrollButton.classList.remove('visible');
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        // Scroll to Top Button (dibuang kerana tiada dalam index.html)
     </script>
 </body>
 </html>
