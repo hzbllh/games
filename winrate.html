@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a1a2e 0%, #1e3a8a 100%);
+            background: linear-gradient(135deg, #0a1a2e, #1e2a44, #ffd70022);
             color: #fff;
             padding: 20px;
             line-height: 1.6;
@@ -32,7 +32,7 @@
         header .logo {
             max-width: 120px;
             height: auto;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
 
         header .logo:hover {
@@ -40,10 +40,11 @@
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             color: #ffd700;
-            margin: 10px 0;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            margin: 15px 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
         }
 
         header p {
@@ -55,21 +56,22 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #ffd700;
+            border-radius: 8px;
+            border: 2px solid #ffd700;
             max-width: 400px;
             width: 100%;
             margin: 20px auto;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             opacity: 0;
-            animation: fadeIn 0.5s ease forwards;
+            animation: fadeInUp 0.5s forwards;
         }
 
         .calculator h2 {
             font-size: 1.8em;
             color: #ffd700;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
         label {
@@ -98,7 +100,7 @@
         }
 
         button {
-            padding: 12px 25px;
+            padding: 12px 20px;
             background: #ffd700;
             color: #0a1a2e;
             border: none;
@@ -106,12 +108,13 @@
             cursor: pointer;
             font-size: 1.1em;
             font-weight: 600;
-            transition: background 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         button:hover {
             background: #e6c200;
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
         }
 
         #result {
@@ -137,50 +140,28 @@
             display: inline-block;
             background: #1e2a44;
             color: #fff;
-            padding: 12px 25px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-size: 1.1em;
             text-decoration: none;
-            border: 1px solid #ffd700;
-            transition: background 0.3s ease, transform 0.3s ease;
+            border: 2px solid #ffd700;
+            transition: all 0.3s ease;
         }
 
         .back-button:hover {
             background: #2a3b5a;
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
         }
 
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ffd700;
-            color: #0a1a2e;
-            padding: 10px 15px;
-            border-radius: 50%;
-            font-size: 1.2em;
-            cursor: pointer;
-            display: none;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .scroll-to-top:hover {
-            transform: scale(1.1);
-        }
-
-        .scroll-to-top.visible {
-            display: block;
-            opacity: 1;
-        }
-
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
 
             header p {
@@ -203,7 +184,7 @@
 
             button {
                 font-size: 1em;
-                padding: 10px 20px;
+                padding: 10px 15px;
             }
 
             #result {
@@ -212,7 +193,7 @@
 
             .back-button {
                 font-size: 1em;
-                padding: 10px 20px;
+                padding: 10px 15px;
             }
         }
     </style>
@@ -243,11 +224,9 @@
     </div>
 
     <footer>
-        <p>&nbsp;</p>
+        <p> </p>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
-
-    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
     <script>
         function calculate() {
@@ -292,20 +271,6 @@
             } else {
                 resultDiv.innerText = `Anda perlu ${additionalWins} kemenangan tambahan untuk mencapai win rate ${targetWinRate}%.`;
             }
-        }
-
-        // Scroll to Top Button
-        window.addEventListener('scroll', () => {
-            const scrollButton = document.querySelector('.scroll-to-top');
-            if (window.scrollY > 300) {
-                scrollButton.classList.add('visible');
-            } else {
-                scrollButton.classList.remove('visible');
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
