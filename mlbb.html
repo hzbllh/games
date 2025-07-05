@@ -124,11 +124,25 @@
             font-weight: 700;
         }
 
-        .info p {
-            font-size: 1.2em;
-            color: #d1d5db;
-            margin: 20px 0;
-            text-align: center;
+        .info .payment-item {
+            background: #1e2a44;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid #ffd700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.5s forwards;
+            animation-delay: 2.4s;
+            color: #ffffff; /* Teks putih kekal */
+        }
+
+        .info .payment-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
         }
 
         footer {
@@ -204,6 +218,11 @@
                 padding: 10px;
             }
 
+            .info .payment-item {
+                font-size: 1em;
+                padding: 10px;
+            }
+
             .whatsapp-button, .back-button {
                 font-size: 0.9em;
                 padding: 8px 15px;
@@ -263,7 +282,9 @@
     </section>
 
     <section class="info">
-        <p><strong>Kaedah Pembayaran:</strong> Online Banking / Touch N Go</p>
+        <div class="payment-item">
+            <span><strong>Kaedah Pembayaran:</strong> Online Banking / Touch N Go</span>
+        </div>
     </section>
 
     <footer>
@@ -272,9 +293,5 @@
         <br>
         <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
     </footer>
-
-    <script>
-        // Scroll to Top Button (dibuang kerana tiada dalam index.html)
-    </script>
 </body>
 </html>
