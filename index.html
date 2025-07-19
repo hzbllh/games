@@ -16,34 +16,112 @@
             text-align: center;
             min-height: 100vh;
         }
-        .header-section { padding: 60px 20px; border-bottom: 3px solid #ffd700; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
-        .header-section .logo { max-width: 120px; height: auto; margin: 0 auto; animation: pulse 2s infinite; transition: transform 0.3s; }
-        .header-section .logo:hover { transform: scale(1.1); }
-        .header-section h1 { font-size: 2.8em; margin: 15px 0; color: #fff; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); font-weight: 600; }
-        .game-options { margin: 40px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
-        .game-options a { display: flex; align-items: center; background: #1e2a44; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-size: 1.1em; border: 2px solid #ffd700; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; opacity: 0; animation: fadeInUp 0.5s forwards; }
+        .header-section {
+            padding: 60px 20px;
+            border-bottom: 3px solid #ffd700;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .header-section .logo {
+            max-width: 120px;
+            height: auto;
+            margin: 0 auto;
+            animation: pulse 2s infinite;
+            transition: transform 0.3s;
+        }
+        .header-section .logo:hover {
+            transform: scale(1.1);
+        }
+        .header-section h1 {
+            font-size: 2.8em;
+            margin: 15px 0;
+            color: #ffd700;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+        .header-section p {
+            font-size: 1.2em;
+            color: #d1d5db;
+        }
+        .game-options {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .game-options a {
+            display: flex;
+            align-items: center;
+            background: #1e2a44;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border: 2px solid #ffd700;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.5s forwards;
+        }
         .game-options a:nth-child(1) { animation-delay: 0.1s; }
         .game-options a:nth-child(2) { animation-delay: 0.2s; }
         .game-options a:nth-child(3) { animation-delay: 0.3s; }
         .game-options a:nth-child(4) { animation-delay: 0.4s; }
         .game-options a:nth-child(5) { animation-delay: 0.5s; }
-        .game-options a:hover { background: #2a3b5a; transform: translateY(-3px); box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3); }
-        .game-options img { max-width: 25px; height: auto; margin-right: 10px; }
-        .game-options i { font-size: 20px; margin-right: 10px; color: #ffd700; }
-        .community { margin: 40px 0; }
-        .community h2 { font-size: 2.2em; color: #ffd700; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; }
-        .community .social-icons { display: flex; justify-content: center; gap: 20px; }
-        .community a { text-decoration: none; font-size: 2.5em; transition: transform 0.3s, color 0.3s; }
+        .game-options a:hover {
+            background: #2a3b5a;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+        }
+        .game-options img {
+            max-width: 25px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .game-options i {
+            font-size: 20px;
+            margin-right: 10px;
+            color: #ffd700;
+        }
+        .community {
+            margin: 40px 0;
+        }
+        .community h2 {
+            font-size: 2.2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .community .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .community a {
+            text-decoration: none;
+            font-size: 2.5em;
+            transition: transform 0.3s, color 0.3s;
+        }
         .community i.whatsapp { color: #25D366; }
         .community a:hover i.whatsapp { color: #1ebe57; transform: scale(1.2); }
         .community i.tiktok { color: #69C9D0; }
         .community a:hover i.tiktok { color: #EE1D52; transform: scale(1.2); }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         @media (max-width: 600px) {
             .header-section { padding: 30px 10px; }
             .header-section .logo { max-width: 80px; }
             .header-section h1 { font-size: 1.8em; }
+            .header-section p { font-size: 1em; }
             .game-options a { width: 80%; margin: 10px auto; font-size: 1em; padding: 10px 15px; }
             .game-options img { max-width: 20px; }
             .game-options i { font-size: 18px; }
@@ -56,6 +134,7 @@
     <section class="header-section">
         <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
         <h1>Kedai H - Pricelist Games</h1>
+        <p>Semua permainan tersedia di Malaysia</p>
     </section>
     <section class="game-options">
         <a href="mlbb.html">
@@ -64,7 +143,7 @@
         </a>
         <a href="pubg.html">
             <img src="https://raw.githubusercontent.com/hzbllh/games/cbc27b2820a2e606d2d052ee4cbfd35228232a05/unnamed.webp" alt="PUBG Icon">
-            PUBG
+            PUBG MOBILE
         </a>
         <a href="valorant.html">
             <img src="https://raw.githubusercontent.com/hzbllh/games/cbc27b2820a2e606d2d052ee4cbfd35228232a05/1WQY5YfS_400x400.jpg" alt="Valorant Icon">
