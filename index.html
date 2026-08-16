@@ -33,7 +33,6 @@
             line-height: 1.6;
         }
         
-        /* Header Styles */
         header {
             padding: 2rem 1rem;
             text-align: center;
@@ -48,7 +47,6 @@
             margin: 0 auto;
             animation: pulse 2s infinite ease-in-out;
             transition: transform 0.3s;
-            will-change: transform;
         }
         
         .logo:hover {
@@ -63,7 +61,6 @@
             font-weight: 600;
         }
         
-        /* Main Content */
         main {
             padding: 2rem 1rem;
             max-width: 1200px;
@@ -91,7 +88,6 @@
             transition: all 0.3s ease;
             opacity: 0;
             animation: fadeInUp 0.5s forwards;
-            will-change: transform, opacity;
         }
         
         .game-card:nth-child(1) { animation-delay: 0.1s; }
@@ -99,6 +95,8 @@
         .game-card:nth-child(3) { animation-delay: 0.3s; }
         .game-card:nth-child(4) { animation-delay: 0.4s; }
         .game-card:nth-child(5) { animation-delay: 0.5s; }
+        .game-card:nth-child(6) { animation-delay: 0.6s; }
+        .game-card:nth-child(7) { animation-delay: 0.7s; }
         
         .game-card:hover {
             background: var(--hover);
@@ -113,7 +111,6 @@
             margin-right: 12px;
         }
         
-        /* Community Section */
         .community {
             text-align: center;
             margin: 3rem 0;
@@ -140,7 +137,6 @@
         .social-link {
             font-size: 2.5rem;
             transition: transform 0.3s;
-            will-change: transform;
         }
         
         .social-link:hover {
@@ -153,7 +149,6 @@
         .social-link:hover .whatsapp { color: #1ebe57; }
         .social-link:hover .tiktok { color: #EE1D52; }
         
-        /* Animations */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -165,7 +160,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Footer */
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -175,7 +169,6 @@
             background-color: rgba(255, 255, 255, 0.7);
         }
         
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
             .game-grid {
                 grid-template-columns: 1fr;
@@ -213,6 +206,22 @@
                      class="game-icon"
                      loading="lazy">
                 Mobile Legends
+            </a>
+            
+            <a href="mlbb-id.html" class="game-card">
+                <img src="https://raw.githubusercontent.com/hzbllh/games/80feffb50d134cafadad745f71af5d7e2f1354b7/unnamed.jpg" 
+                     alt="Mobile Legends ID" 
+                     class="game-icon"
+                     loading="lazy">
+                Mobile Legends ID
+            </a>
+            
+            <a href="mcgg.html" class="game-card">
+                <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" 
+                     alt="Magic Chess" 
+                     class="game-icon"
+                     loading="lazy">
+                Magic Chess (MCGG)
             </a>
             
             <a href="pubg.html" class="game-card">
