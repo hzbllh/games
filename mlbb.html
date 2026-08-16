@@ -57,7 +57,7 @@
             margin: 40px 0;
         }
 
-        .recommended h3, .weekly h3, .diamond h3 {
+        .weekly h3, .first-recharge h3, .diamond h3 {
             font-size: 2.2em;
             color: #ffd700;
             margin: 20px 0;
@@ -104,11 +104,6 @@
         .item:nth-child(16) { animation-delay: 1.6s; }
         .item:nth-child(17) { animation-delay: 1.7s; }
         .item:nth-child(18) { animation-delay: 1.8s; }
-        .item:nth-child(19) { animation-delay: 1.9s; }
-        .item:nth-child(20) { animation-delay: 2.0s; }
-        .item:nth-child(21) { animation-delay: 2.1s; }
-        .item:nth-child(22) { animation-delay: 2.2s; }
-        .item:nth-child(23) { animation-delay: 2.3s; }
 
         .item:hover {
             transform: translateY(-3px);
@@ -136,8 +131,8 @@
             transition: all 0.3s ease;
             opacity: 0;
             animation: fadeInUp 0.5s forwards;
-            animation-delay: 2.4s;
-            color: #ffffff; /* Teks putih kekal */
+            animation-delay: 2.0s;
+            color: #ffffff;
         }
 
         .info .payment-item:hover {
@@ -205,7 +200,7 @@
                 font-size: 1em;
             }
 
-            .recommended h3, .weekly h3, .diamond h3 {
+            .weekly h3, .first-recharge h3, .diamond h3 {
                 font-size: 1.5em;
             }
 
@@ -238,45 +233,47 @@
     </header>
 
     <section class="pricelist">
-        <div class="recommended">
-            <h3>Recommended Recharge Event Task</h3>
-            <div class="grid">
-                <div class="item"><span>284 Diamonds</span><span>RM 20.31</span></div>
-                <div class="item"><span>2 Weekly + 56 Diamonds</span><span>RM 21.30</span></div>
-                <div class="item"><span>3 Weekly</span><span>RM 26</span></div>
-            </div>
-        </div>
-
+        <!-- Weekly Pass -->
         <div class="weekly">
-            <h3>Weekly Diamond Pass</h3>
+            <h3>Weekly Pass</h3>
             <div class="grid">
-                <div class="item"><span>Weekly Pass</span><span>RM 8.68</span></div>
-                <div class="item"><span>Weekly Pass x3</span><span>RM 26</span></div>
-                <div class="item"><span>Weekly Pass x10</span><span>RM 86</span></div>
+                <div class="item"><span>Weekly Pass</span><span>RM 9.00</span></div>
             </div>
         </div>
 
+        <!-- First Recharge -->
+        <div class="first-recharge">
+            <h3>First Recharge</h3>
+            <div class="grid">
+                <div class="item"><span>55 Diamonds (50 + 50)</span><span>RM 4.50</span></div>
+                <div class="item"><span>165 Diamonds (150 + 150)</span><span>RM 12.60</span></div>
+                <div class="item"><span>275 Diamonds (250 + 250)</span><span>RM 20.60</span></div>
+                <div class="item"><span>565 Diamonds (500 + 500)</span><span>RM 41.60</span></div>
+            </div>
+        </div>
+
+        <!-- Pricelist Diamond -->
         <div class="diamond">
             <h3>Pricelist Diamond</h3>
             <div class="grid">
-                <div class="item"><span>140 Diamonds</span><span>RM 10.14</span></div>
-                <div class="item"><span>284 Diamonds</span><span>RM 20.31</span></div>
-                <div class="item"><span>355 Diamonds</span><span>RM 25.42</span></div>
-                <div class="item"><span>429 Diamonds</span><span>RM 30.06</span></div>
-                <div class="item"><span>569 Diamonds</span><span>RM 40.24</span></div>
-                <div class="item"><span>716 Diamonds</span><span>RM 50.83</span></div>
-                <div class="item"><span>1085 Diamonds</span><span>RM 77.24</span></div>
-                <div class="item"><span>1446 Diamonds</span><span>RM 101.35</span></div>
-                <div class="item"><span>1875 Diamonds</span><span>RM 131.44</span></div>
-                <div class="item"><span>2162 Diamonds</span><span>RM 152.18</span></div>
-                <div class="item"><span>2976 Diamonds</span><span>RM 203.29</span></div>
-                <div class="item"><span>3345 Diamonds</span><span>RM 229.73</span></div>
-                <div class="item"><span>4047 Diamonds</span><span>RM 279.53</span></div>
-                <div class="item"><span>5138 Diamonds</span><span>RM 355.46</span></div>
-                <div class="item"><span>6092 Diamonds</span><span>RM 416.75</span></div>
-                <div class="item"><span>7502 Diamonds</span><span>RM 507.28</span></div>
-                <div class="item"><span>9377 Diamonds</span><span>RM 638.72</span></div>
-                <div class="item"><span>10478 Diamonds</span><span>RM 710.57</span></div>
+                <div class="item"><span>14 Diamonds</span><span>RM 1.20</span></div>
+                <div class="item"><span>42 Diamonds</span><span>RM 4.00</span></div>
+                <div class="item"><span>70 Diamonds</span><span>RM 5.50</span></div>
+                <div class="item"><span>140 Diamonds</span><span>RM 11.00</span></div>
+                <div class="item"><span>278 Diamonds</span><span>RM 20.50</span></div>
+                <div class="item"><span>284 Diamonds</span><span>RM 21.00</span></div>
+                <div class="item"><span>355 Diamonds</span><span>RM 27.00</span></div>
+                <div class="item"><span>429 Diamonds</span><span>RM 32.00</span></div>
+                <div class="item"><span>571 Diamonds</span><span>RM 42.00</span></div>
+                <div class="item"><span>716 Diamonds</span><span>RM 52.00</span></div>
+                <div class="item"><span>1084 Diamonds</span><span>RM 79.00</span></div>
+                <div class="item"><span>1192 Diamonds</span><span>RM 86.00</span></div>
+                <div class="item"><span>1446 Diamonds</span><span>RM 104.00</span></div>
+                <div class="item"><span>1788 Diamonds</span><span>RM 127.00</span></div>
+                <div class="item"><span>2976 Diamonds</span><span>RM 203.00</span></div>
+                <div class="item"><span>3005 Diamonds</span><span>RM 205.00</span></div>
+                <div class="item"><span>6012 Diamonds</span><span>RM 399.00</span></div>
+                <div class="item"><span>7502 Diamonds</span><span>RM 499.00</span></div>
             </div>
         </div>
     </section>
