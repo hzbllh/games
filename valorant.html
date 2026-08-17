@@ -6,12 +6,7 @@
     <title>Kedai H - Pricelist Valorant</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #0a1a2e, #1e2a44, #ffd70022);
@@ -23,22 +18,9 @@
             flex-direction: column;
             align-items: center;
         }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        header .logo {
-            max-width: 120px;
-            height: auto;
-            transition: transform 0.3s;
-        }
-
-        header .logo:hover {
-            transform: scale(1.1);
-        }
-
+        header { text-align: center; margin-bottom: 30px; }
+        header .logo { max-width: 120px; height: auto; transition: transform 0.3s; }
+        header .logo:hover { transform: scale(1.1); }
         header h1 {
             font-size: 2.8em;
             color: #ffd700;
@@ -46,17 +28,8 @@
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
             font-weight: 600;
         }
-
-        header p {
-            font-size: 1.2em;
-            color: #d1d5db;
-        }
-
-        .pricelist {
-            max-width: 1200px;
-            margin: 40px 0;
-        }
-
+        header p { font-size: 1.2em; color: #d1d5db; }
+        .pricelist { max-width: 1200px; margin: 40px 0; }
         .diamond h3 {
             font-size: 2.2em;
             color: #ffd700;
@@ -65,13 +38,11 @@
             font-weight: 600;
             text-transform: uppercase;
         }
-
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
         }
-
         .item {
             background: #1e2a44;
             padding: 12px 20px;
@@ -85,28 +56,18 @@
             opacity: 0;
             animation: fadeInUp 0.5s forwards;
         }
-
         .item:nth-child(1) { animation-delay: 0.1s; }
         .item:nth-child(2) { animation-delay: 0.2s; }
         .item:nth-child(3) { animation-delay: 0.3s; }
         .item:nth-child(4) { animation-delay: 0.4s; }
         .item:nth-child(5) { animation-delay: 0.5s; }
         .item:nth-child(6) { animation-delay: 0.6s; }
-
         .item:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
         }
-
-        .item span:first-child {
-            font-weight: 600;
-        }
-
-        .item span:last-child {
-            color: #ffd700;
-            font-weight: 700;
-        }
-
+        .item span:first-child { font-weight: 600; }
+        .item span:last-child { color: #ffd700; font-weight: 700; }
         .info .payment-item {
             background: #1e2a44;
             padding: 12px 20px;
@@ -122,24 +83,12 @@
             animation-delay: 0.7s;
             color: #ffffff;
         }
-
         .info .payment-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
         }
-
-        footer {
-            margin-top: auto;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 1.2em;
-            color: #ffd700;
-            margin-bottom: 10px;
-        }
-
+        footer { margin-top: auto; padding: 20px 0; text-align: center; }
+        footer p { font-size: 1.2em; color: #ffd700; margin-bottom: 10px; }
         .whatsapp-button, .back-button {
             display: inline-block;
             padding: 12px 20px;
@@ -147,69 +96,24 @@
             font-size: 1.1em;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
-        .whatsapp-button {
-            background: #25D366;
-            color: #fff;
-        }
-
-        .whatsapp-button:hover {
-            background: #1ebe57;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(30, 190, 87, 0.3);
-        }
-
+        .whatsapp-button { background: #25D366; color: #fff; }
+        .whatsapp-button:hover { background: #1ebe57; transform: translateY(-2px); }
         .back-button {
             background: #1e2a44;
             color: #fff;
             border: 2px solid #ffd700;
             margin-top: 10px;
         }
-
-        .back-button:hover {
-            background: #2a3b5a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-        }
-
+        .back-button:hover { background: #2a3b5a; transform: translateY(-2px); }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .diamond h3 {
-                font-size: 1.5em;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .item {
-                font-size: 1em;
-                padding: 10px;
-            }
-
-            .info .payment-item {
-                font-size: 1em;
-                padding: 10px;
-            }
-
-            .whatsapp-button, .back-button {
-                font-size: 0.9em;
-                padding: 8px 15px;
-            }
+            header h1 { font-size: 1.8em; }
+            .diamond h3 { font-size: 1.5em; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -224,12 +128,12 @@
         <div class="diamond">
             <h3>Pricelist Valorant</h3>
             <div class="grid">
-                <div class="item"><span>475 Points</span><span>RM 16</span></div>
-                <div class="item"><span>1000 Points</span><span>RM 33.50</span></div>
-                <div class="item"><span>2050 Points</span><span>RM 65.50</span></div>
-                <div class="item"><span>3650 Points</span><span>RM 115</span></div>
-                <div class="item"><span>5350 Points</span><span>RM 163</span></div>
-                <div class="item"><span>11000 Points</span><span>RM 333</span></div>
+                <div class="item"><span>475 Points</span><span>RM 17.90</span></div>
+                <div class="item"><span>1000 Points</span><span>RM 36.50</span></div>
+                <div class="item"><span>2050 Points</span><span>RM 70.00</span></div>
+                <div class="item"><span>3650 Points</span><span>RM 125.00</span></div>
+                <div class="item"><span>5350 Points</span><span>RM 175.00</span></div>
+                <div class="item"><span>11000 Points</span><span>RM 355.00</span></div>
             </div>
         </div>
     </section>
