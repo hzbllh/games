@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai H - ML Checker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a1a2e, #1e2a44, #ffd70022);
+            color: #fff;
+            padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header .logo {
+            max-width: 120px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        header .logo:hover {
+            transform: scale(1.1);
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            color: #ffd700;
+            margin: 15px 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #d1d5db;
+        }
+
+        .checker {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #ffd700;
+            max-width: 420px;
+            width: 100%;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        .checker h2 {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 5px;
+            font-size: 1.1em;
+            color: #d1d5db;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ffd700;
+            border-radius: 8px;
+            background: #2a3b5a;
+            color: #fff;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #e6c200;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+        }
+
+        input::placeholder {
+            color: #9ca3af;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px 20px;
+            background: #ffd700;
+            color: #0a1a2e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.15em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #e6c200;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+        }
+
+        button:disabled {
+            background: #6b7280;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.05em;
+            display: none;
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        #result.success {
+            display: block;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid #10b981;
+            color: #a7f3d0;
+        }
+
+        #result.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid #ef4444;
+            color: #fca5a5;
+        }
+
+        #result .nickname {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 30px 0 20px;
+            text-align: center;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #1e2a44;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            text-decoration: none;
+            border: 2px solid #ffd700;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2a3b5a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.9em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .checker {
+                padding: 18px;
+                max-width: 95%;
+            }
+
+            .checker h2 {
+                font-size: 1.5em;
+            }
+
+            input {
+                font-size: 0.95em;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 1.05em;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
+        <h1>ML Checker</h1>
+        <p>Semak Nickname & Region akaun Mobile Legends</p>
+    </header>
+
+    <div class="checker">
+        <h2>Check ID MLBB</h2>
+        
+        <div>
+            <label>User ID</label>
+            <input type="text" id="userId" placeholder="Contoh: 123456789" inputmode="numeric">
+        </div>
+        
+        <div>
+            <label>Zone ID (Server)</label>
+            <input type="text" id="zoneId" placeholder="Contoh: 1234" inputmode="numeric">
+        </div>
+        
+        <button id="checkBtn" onclick="checkAccount()">Check Sekarang</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <footer>
+        <a href="index.html" class="back-button">← Kembali ke Halaman Utama</a>
+    </footer>
+
+    <script>
+        async function checkAccount() {
+            const userId = document.getElementById("userId").value.trim();
+            const zoneId = document.getElementById("zoneId").value.trim();
+            const resultDiv = document.getElementById("result");
+            const btn = document.getElementById("checkBtn");
+
+            // Reset
+            resultDiv.className = "";
+            resultDiv.style.display = "none";
+            resultDiv.innerHTML = "";
+
+            // Validation
+            if (!userId || !zoneId) {
+                showError("Sila masukkan User ID dan Zone ID.");
+                return;
+            }
+
+            if (!/^\d+\( /.test(userId) || !/^\d+ \)/.test(zoneId)) {
+                showError("User ID dan Zone ID mesti nombor sahaja.");
+                return;
+            }
+
+            // Loading state
+            btn.disabled = true;
+            btn.innerText = "Sedang check...";
+
+            try {
+                const url = `https://api.isan.eu.org/nickname/ml?id=\( {encodeURIComponent(userId)}&server= \){encodeURIComponent(zoneId)}`;
+                
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error("Server error: " + response.status);
+                }
+
+                const data = await response.json();
+                console.log("API Response:", data);
+
+                if (data.success === true && data.name) {
+                    resultDiv.className = "success";
+                    resultDiv.innerHTML = `
+                        <div class="nickname">${data.name}</div>
+                        <div>User ID: <strong>${data.id || userId}</strong></div>
+                        <div>Zone ID: <strong>${data.server || zoneId}</strong></div>
+                        \( {data.country ? `<div>Negara: <strong> \){data.country}</strong></div>` : ""}
+                        <div style="margin-top:8px; font-size:0.95em; opacity:0.9;">✓ Akaun dijumpai</div>
+                    `;
+                    resultDiv.style.display = "block";
+                } else {
+                    showError(data.message || "Akaun tidak dijumpai. Sila pastikan User ID & Zone ID betul.");
+                }
+            } catch (error) {
+                console.error(error);
+                showError("Gagal connect ke server. Cuba refresh page atau cuba lagi.");
+            }
+
+            btn.disabled = false;
+            btn.innerText = "Check Sekarang";
+        }
+
+        function showError(msg) {
+            const resultDiv = document.getElementById("result");
+            resultDiv.className = "error";
+            resultDiv.innerHTML = msg;
+            resultDiv.style.display = "block";
+        }
+
+        // Allow Enter key
+        document.getElementById("userId").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") checkAccount();
+        });
+        document.getElementById("zoneId").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") checkAccount();
+        });
+    </script>
+</body>
+</html>
