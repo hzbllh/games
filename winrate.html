@@ -4,274 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kedai H - Winrate Calculator</title>
+    <meta name="description" content="Kalkulator Winrate Mobile Legends percuma. Kira berapa kemenangan diperlukan untuk capai winrate sasaran.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kedaihgames.shop/winrate.html">
+    <meta property="og:title" content="Kedai H - Kalkulator Winrate MLBB">
+    <meta property="og:description" content="Kira kemenangan tambahan untuk capai winrate sasaran Mobile Legends.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/hzbllh/games/refs/heads/main/file_00000000a414820baba9116f515a50ec.png">
+    <meta property="og:url" content="https://kedaihgames.shop/winrate.html">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a1a2e, #1e2a44, #ffd70022);
-            color: #fff;
-            padding: 20px;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        header .logo {
-            max-width: 120px;
-            height: auto;
-            transition: transform 0.3s;
-        }
-
-        header .logo:hover {
-            transform: scale(1.1);
-        }
-
-        header h1 {
-            font-size: 2.8em;
-            color: #ffd700;
-            margin: 15px 0;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-            font-weight: 600;
-        }
-
-        header p {
-            font-size: 1.2em;
-            color: #d1d5db;
-        }
-
-        .calculator {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 8px;
-            border: 2px solid #ffd700;
-            max-width: 400px;
-            width: 100%;
-            margin: 20px auto;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-        }
-
-        .calculator h2 {
-            font-size: 1.8em;
-            color: #ffd700;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            font-size: 1.1em;
-            color: #d1d5db;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ffd700;
-            border-radius: 8px;
-            background: #2a3b5a;
-            color: #fff;
-            font-size: 1em;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #e6c200;
-            box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
-        }
-
-        button {
-            padding: 12px 20px;
-            background: #ffd700;
-            color: #0a1a2e;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            background: #e6c200;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-        }
-
-        #result {
-            margin-top: 20px;
-            font-weight: 600;
-            font-size: 1.1em;
-            color: #ffd700;
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 1.2em;
-            color: #ffd700;
-            margin-bottom: 10px;
-        }
-
-        .back-button {
-            display: inline-block;
-            background: #1e2a44;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 1.1em;
-            text-decoration: none;
-            border: 2px solid #ffd700;
-            transition: all 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: #2a3b5a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .calculator {
-                padding: 15px;
-                max-width: 90%;
-            }
-
-            .calculator h2 {
-                font-size: 1.5em;
-            }
-
-            input {
-                font-size: 0.9em;
-                padding: 8px;
-            }
-
-            button {
-                font-size: 1em;
-                padding: 10px 15px;
-            }
-
-            #result {
-                font-size: 1em;
-            }
-
-            .back-button {
-                font-size: 1em;
-                padding: 10px 15px;
-            }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a1a2e,#1e2a44,#ffd70022);color:#fff;padding:20px;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+        header{text-align:center;margin-bottom:30px}
+        header .logo{max-width:120px}
+        header h1{font-size:2.8em;color:#ffd700;margin:15px 0;font-weight:600}
+        header p{font-size:1.2em;color:#d1d5db}
+        .calculator{background:rgba(255,255,255,.1);padding:20px;border-radius:8px;border:2px solid #ffd700;max-width:400px;width:100%;text-align:center}
+        .calculator h2{font-size:1.8em;color:#ffd700;margin-bottom:20px}
+        label{display:block;margin:10px 0 5px;color:#d1d5db}
+        input{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ffd700;border-radius:8px;background:#2a3b5a;color:#fff}
+        button{padding:12px 20px;background:#ffd700;color:#0a1a2e;border:none;border-radius:8px;font-size:1.1em;font-weight:600;cursor:pointer}
+        #result{margin-top:20px;font-weight:600;color:#ffd700}
+        footer{margin-top:auto;padding:20px 0;text-align:center}
+        .back-button{display:inline-block;background:#1e2a44;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;border:2px solid #ffd700}
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
-        <h1>Winrate Calculator</h1>
-        <p>Kira bilangan kemenangan tambahan untuk win rate sasaran</p>
-    </header>
-
-    <div class="calculator">
-        <h2>Kalkulator Win Rate</h2>
-        <div>
-            <label>Jumlah Permainan:</label>
-            <input type="number" id="totalMatches" placeholder="Masukkan jumlah permainan" min="0">
-        </div>
-        <div>
-            <label>Win Rate Semasa (%):</label>
-            <input type="number" id="currentWinRate" placeholder="Masukkan win rate semasa" min="0" max="100" step="0.01">
-        </div>
-        <div>
-            <label>Win Rate Sasaran (%):</label>
-            <input type="number" id="targetWinRate" placeholder="Masukkan win rate sasaran" min="0" max="100" step="0.01">
-        </div>
-        <button onclick="calculate()">Kira</button>
-        <div id="result"></div>
-    </div>
-
-    <footer>
-        <p> </p>
-        <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
-    </footer>
-
-    <script>
-        function calculate() {
-            // Ambil nilai input
-            const totalMatches = parseFloat(document.getElementById("totalMatches").value) || 0;
-            const currentWinRate = parseFloat(document.getElementById("currentWinRate").value) || 0;
-            const targetWinRate = parseFloat(document.getElementById("targetWinRate").value) || 0;
-
-            const resultDiv = document.getElementById("result");
-
-            // Semak jika input kosong
-            if (totalMatches === 0 || currentWinRate === 0 || targetWinRate === 0) {
-                resultDiv.innerText = "Sila masukkan semua nilai.";
-                return;
-            }
-
-            // Semak jika input sah
-            if (totalMatches < 0) {
-                resultDiv.innerText = "Jumlah permainan tidak boleh negatif.";
-                return;
-            }
-            if (currentWinRate < 0 || currentWinRate > 100) {
-                resultDiv.innerText = "Win rate semasa mestilah antara 0 dan 100%.";
-                return;
-            }
-            if (targetWinRate <= 0 || targetWinRate >= 100) {
-                resultDiv.innerText = "Win rate sasaran mestilah antara 0 dan kurang daripada 100%.";
-                return;
-            }
-
-            // Kira jumlah kemenangan semasa
-            const currentWins = (currentWinRate * totalMatches) / 100;
-
-            // Kira kemenangan tambahan
-            const additionalWins = Math.ceil(
-                ((targetWinRate * totalMatches) - (100 * currentWins)) / (100 - targetWinRate)
-            );
-
-            // Papar hasil
-            if (additionalWins < 0) {
-                resultDiv.innerText = "Win rate semasa sudah melebihi sasaran.";
-            } else {
-                resultDiv.innerText = `Anda perlu ${additionalWins} kemenangan tambahan untuk mencapai win rate ${targetWinRate}%.`;
-            }
-        }
-    </script>
+<header>
+    <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
+    <h1>Winrate Calculator</h1>
+    <p>Kira bilangan kemenangan tambahan untuk win rate sasaran</p>
+</header>
+<div class="calculator">
+    <h2>Kalkulator Win Rate</h2>
+    <label>Jumlah Permainan:</label>
+    <input type="number" id="totalMatches" placeholder="Masukkan jumlah permainan" min="0">
+    <label>Win Rate Semasa (%):</label>
+    <input type="number" id="currentWinRate" placeholder="Masukkan win rate semasa" min="0" max="100" step="0.01">
+    <label>Win Rate Sasaran (%):</label>
+    <input type="number" id="targetWinRate" placeholder="Masukkan win rate sasaran" min="0" max="100" step="0.01">
+    <button onclick="calculate()">Kira</button>
+    <div id="result"></div>
+</div>
+<footer><a href="index.html" class="back-button">Kembali ke Halaman Utama</a></footer>
+<script>
+function calculate(){
+    const totalMatches=parseFloat(document.getElementById("totalMatches").value)||0;
+    const currentWinRate=parseFloat(document.getElementById("currentWinRate").value)||0;
+    const targetWinRate=parseFloat(document.getElementById("targetWinRate").value)||0;
+    const resultDiv=document.getElementById("result");
+    if(totalMatches===0||currentWinRate===0||targetWinRate===0){resultDiv.innerText="Sila masukkan semua nilai.";return;}
+    if(totalMatches<0){resultDiv.innerText="Jumlah permainan tidak boleh negatif.";return;}
+    if(currentWinRate<0||currentWinRate>100){resultDiv.innerText="Win rate semasa mestilah antara 0 dan 100%.";return;}
+    if(targetWinRate<=0||targetWinRate>=100){resultDiv.innerText="Win rate sasaran mestilah antara 0 dan kurang daripada 100%.";return;}
+    const currentWins=(currentWinRate*totalMatches)/100;
+    const additionalWins=Math.ceil(((targetWinRate*totalMatches)-(100*currentWins))/(100-targetWinRate));
+    if(additionalWins<0){resultDiv.innerText="Win rate semasa sudah melebihi sasaran.";}
+    else{resultDiv.innerText=`Anda perlu ${additionalWins} kemenangan tambahan untuk mencapai win rate ${targetWinRate}%.`;}
+}
+</script>
 </body>
 </html>
