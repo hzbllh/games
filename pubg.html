@@ -1,250 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kedai H - Pricelist PUBG MOBILE</title>
+    <meta name="description" content="Pricelist UC PUBG Mobile Malaysia. 60 UC hingga 8100 UC. Harga terbaik, topup pantas via ID & Server.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kedaihgames.shop/pubg.html">
+    <meta property="og:title" content="Kedai H - Pricelist PUBG Mobile">
+    <meta property="og:description" content="Topup UC PUBG Mobile Malaysia murah & pantas. Semua nominal tersedia.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/hzbllh/games/refs/heads/main/file_00000000a414820baba9116f515a50ec.png">
+    <meta property="og:url" content="https://kedaihgames.shop/pubg.html">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a1a2e, #1e2a44, #ffd70022);
-            color: #fff;
-            padding: 20px;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        header .logo {
-            max-width: 120px;
-            height: auto;
-            transition: transform 0.3s;
-        }
-
-        header .logo:hover {
-            transform: scale(1.1);
-        }
-
-        header h1 {
-            font-size: 2.8em;
-            color: #ffd700;
-            margin: 15px 0;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-            font-weight: 600;
-        }
-
-        header p {
-            font-size: 1.2em;
-            color: #d1d5db;
-        }
-
-        .pricelist {
-            max-width: 1200px;
-            margin: 40px 0;
-        }
-
-        .diamond h3 {
-            font-size: 2.2em;
-            color: #ffd700;
-            margin: 20px 0;
-            text-align: center;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
-
-        .item {
-            background: #1e2a44;
-            padding: 12px 20px;
-            border-radius: 8px;
-            border: 2px solid #ffd700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-        }
-
-        .item:nth-child(1) { animation-delay: 0.1s; }
-        .item:nth-child(2) { animation-delay: 0.2s; }
-        .item:nth-child(3) { animation-delay: 0.3s; }
-        .item:nth-child(4) { animation-delay: 0.4s; }
-        .item:nth-child(5) { animation-delay: 0.5s; }
-        .item:nth-child(6) { animation-delay: 0.6s; }
-
-        .item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-        }
-
-        .item span:first-child {
-            font-weight: 600;
-        }
-
-        .item span:last-child {
-            color: #ffd700;
-            font-weight: 700;
-        }
-
-        .info .payment-item {
-            background: #1e2a44;
-            padding: 12px 20px;
-            border-radius: 8px;
-            border: 2px solid #ffd700;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-            animation-delay: 0.7s;
-            color: #ffffff;
-        }
-
-        .info .payment-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 1.2em;
-            color: #ffd700;
-            margin-bottom: 10px;
-        }
-
-        .whatsapp-button, .back-button {
-            display: inline-block;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 1.1em;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .whatsapp-button {
-            background: #25D366;
-            color: #fff;
-        }
-
-        .whatsapp-button:hover {
-            background: #1ebe57;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(30, 190, 87, 0.3);
-        }
-
-        .back-button {
-            background: #1e2a44;
-            color: #fff;
-            border: 2px solid #ffd700;
-            margin-top: 10px;
-        }
-
-        .back-button:hover {
-            background: #2a3b5a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .diamond h3 {
-                font-size: 1.5em;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .item {
-                font-size: 1em;
-                padding: 10px;
-            }
-
-            .info .payment-item {
-                font-size: 1em;
-                padding: 10px;
-            }
-
-            .whatsapp-button, .back-button {
-                font-size: 0.9em;
-                padding: 8px 15px;
-            }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a1a2e,#1e2a44,#ffd70022);color:#fff;padding:20px;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+        header{text-align:center;margin-bottom:30px}
+        header .logo{max-width:120px;height:auto;transition:transform .3s}
+        header .logo:hover{transform:scale(1.1)}
+        header h1{font-size:2.8em;color:#ffd700;margin:15px 0;font-weight:600}
+        header p{font-size:1.2em;color:#d1d5db}
+        .pricelist{max-width:1200px;margin:40px 0}
+        .diamond h3{font-size:2.2em;color:#ffd700;margin:20px 0;text-align:center;font-weight:600;text-transform:uppercase}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+        .item{background:#1e2a44;padding:12px 20px;border-radius:8px;border:2px solid #ffd700;display:flex;justify-content:space-between;align-items:center;font-size:1.1em;opacity:0;animation:fadeInUp .5s forwards}
+        .item:nth-child(1){animation-delay:.1s}.item:nth-child(2){animation-delay:.2s}.item:nth-child(3){animation-delay:.3s}.item:nth-child(4){animation-delay:.4s}.item:nth-child(5){animation-delay:.5s}.item:nth-child(6){animation-delay:.6s}
+        .item:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(255,215,0,.3)}
+        .item span:first-child{font-weight:600}.item span:last-child{color:#ffd700;font-weight:700}
+        .info .payment-item{background:#1e2a44;padding:12px 20px;border-radius:8px;border:2px solid #ffd700;display:flex;justify-content:center;font-size:1.1em;opacity:0;animation:fadeInUp .5s forwards;animation-delay:.7s;color:#fff}
+        footer{margin-top:auto;padding:20px 0;text-align:center}
+        footer p{font-size:1.2em;color:#ffd700;margin-bottom:10px}
+        .whatsapp-button,.back-button{display:inline-block;padding:12px 20px;border-radius:8px;font-size:1.1em;text-decoration:none}
+        .whatsapp-button{background:#25D366;color:#fff}.whatsapp-button:hover{background:#1ebe57}
+        .back-button{background:#1e2a44;color:#fff;border:2px solid #ffd700;margin-top:10px}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @media(max-width:768px){header h1{font-size:1.8em}.grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
-        <h1>Pricelist PUBG MOBILE</h1>
-        <p>Malaysia (Via ID & Server)</p>
-    </header>
-
-    <section class="pricelist">
-        <div class="diamond">
-            <h3>Pricelist PUBG MOBILE</h3>
-            <div class="grid">
-                <div class="item"><span>60 UC</span><span>RM 4.00</span></div>
-                <div class="item"><span>325 UC</span><span>RM 21.00</span></div>
-                <div class="item"><span>660 UC</span><span>RM 40.00</span></div>
-                <div class="item"><span>1800 UC</span><span>RM 102.00</span></div>
-                <div class="item"><span>3850 UC</span><span>RM 205.00</span></div>
-                <div class="item"><span>8100 UC</span><span>RM 395.00</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="info">
-        <div class="payment-item">
-            <span><strong>Kaedah Pembayaran:</strong> Online Banking / Touch N Go</span>
-        </div>
-    </section>
-
-    <footer>
-        <p><strong>↓↓ Beli Di Sini ↓↓</strong></p>
-        <a href="https://wa.me/60195080896?text=Nak%20PUBG%20UC" class="whatsapp-button">Chat Sekarang di WhatsApp</a>
-        <br>
-        <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
-    </footer>
+<header>
+    <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Kedai H Logo" class="logo">
+    <h1>Pricelist PUBG MOBILE</h1>
+    <p>Malaysia (Via ID & Server)</p>
+</header>
+<section class="pricelist">
+    <div class="diamond"><h3>Pricelist PUBG MOBILE</h3>
+    <div class="grid">
+        <div class="item"><span>60 UC</span><span>RM 4.00</span></div>
+        <div class="item"><span>325 UC</span><span>RM 21.00</span></div>
+        <div class="item"><span>660 UC</span><span>RM 40.00</span></div>
+        <div class="item"><span>1800 UC</span><span>RM 102.00</span></div>
+        <div class="item"><span>3850 UC</span><span>RM 205.00</span></div>
+        <div class="item"><span>8100 UC</span><span>RM 395.00</span></div>
+    </div></div>
+</section>
+<section class="info"><div class="payment-item"><span><strong>Kaedah Pembayaran:</strong> Online Banking / Touch N Go</span></div></section>
+<footer>
+    <p><strong>↓↓ Beli Di Sini ↓↓</strong></p>
+    <a href="https://wa.me/60195080896?text=Nak%20PUBG%20UC" class="whatsapp-button">Chat Sekarang di WhatsApp</a><br>
+    <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
+</footer>
 </body>
 </html>
