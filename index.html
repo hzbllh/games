@@ -7,285 +7,66 @@
     <meta name="description" content="Kedai H - Pricelist topup game Malaysia. Mobile Legends, PUBG, Valorant, Genshin Impact, Magic Chess. Harga terbaik, proses pantas via ID & Server.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://kedaihgames.shop/">
-
     <meta property="og:title" content="Kedai H - Pricelist Games">
     <meta property="og:description" content="Topup MLBB, PUBG, Valorant & Genshin murah di Malaysia. Proses pantas, via ID & Server.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/hzbllh/games/refs/heads/main/file_00000000a414820baba9116f515a50ec.png">
     <meta property="og:url" content="https://kedaihgames.shop/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ms_MY">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #0a1a2e;
-            --secondary: #1e2a44;
-            --accent: #ffd700;
-            --text: #ffffff;
-            --text-secondary: #d1d5db;
-            --hover: #2a3b5a;
-            --footer-text: #000000;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--primary), var(--secondary), #ffd70022);
-            color: var(--text);
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-        
-        header {
-            padding: 2rem 1rem;
-            text-align: center;
-            border-bottom: 3px solid var(--accent);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            background: rgba(10, 26, 46, 0.8);
-        }
-        
-        .logo {
-            width: 150px;
-            height: auto;
-            margin: 0 auto;
-            animation: pulse 2s infinite ease-in-out;
-            transition: transform 0.3s;
-        }
-        
-        .logo:hover {
-            transform: scale(1.1);
-        }
-        
-        h1 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            margin: 1rem 0;
-            color: var(--accent);
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-            font-weight: 600;
-        }
-        
-        main {
-            padding: 2rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .game-card {
-            display: flex;
-            align-items: center;
-            background: var(--secondary);
-            color: var(--text);
-            padding: 1.2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            border: 2px solid var(--accent);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-        }
-        
-        .game-card:nth-child(1) { animation-delay: 0.1s; }
-        .game-card:nth-child(2) { animation-delay: 0.2s; }
-        .game-card:nth-child(3) { animation-delay: 0.3s; }
-        .game-card:nth-child(4) { animation-delay: 0.4s; }
-        .game-card:nth-child(5) { animation-delay: 0.5s; }
-        .game-card:nth-child(6) { animation-delay: 0.6s; }
-        .game-card:nth-child(7) { animation-delay: 0.7s; }
-        .game-card:nth-child(8) { animation-delay: 0.8s; }
-        
-        .game-card:hover {
-            background: var(--hover);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
-        }
-        
-        .game-icon {
-            width: 30px;
-            height: 30px;
-            object-fit: contain;
-            margin-right: 12px;
-        }
-        
-        .community {
-            text-align: center;
-            margin: 3rem 0;
-            padding: 2rem 1rem;
-            background: rgba(30, 42, 68, 0.6);
-            border-radius: 10px;
-        }
-        
-        .community h2 {
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .social-link {
-            font-size: 2.5rem;
-            transition: transform 0.3s;
-        }
-        
-        .social-link:hover {
-            transform: scale(1.2);
-        }
-        
-        .whatsapp { color: #25D366; }
-        .tiktok { color: #69C9D0; }
-        
-        .social-link:hover .whatsapp { color: #1ebe57; }
-        .social-link:hover .tiktok { color: #EE1D52; }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            color: var(--footer-text);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        
-        @media (max-width: 768px) {
-            .game-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .game-card {
-                font-size: 1rem;
-                padding: 1rem;
-            }
-            
-            .social-links {
-                gap: 1.5rem;
-            }
-            
-            .social-link {
-                font-size: 2rem;
-            }
-        }
+        :root{--primary:#0a1a2e;--secondary:#1e2a44;--accent:#ffd700;--text:#fff;--hover:#2a3b5a;--footer-text:#000}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,var(--primary),var(--secondary),#ffd70022);color:var(--text);min-height:100vh;line-height:1.6}
+        header{padding:2rem 1rem;text-align:center;border-bottom:3px solid var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.2);background:rgba(10,26,46,.8)}
+        .logo{width:150px;height:auto;margin:0 auto;animation:pulse 2s infinite ease-in-out;transition:transform .3s}
+        .logo:hover{transform:scale(1.1)}
+        h1{font-size:clamp(1.8rem,4vw,2.8rem);margin:1rem 0;color:var(--accent);text-shadow:2px 2px 6px rgba(0,0,0,.5);font-weight:600}
+        main{padding:2rem 1rem;max-width:1200px;margin:0 auto}
+        .game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin:2rem 0}
+        .game-card{display:flex;align-items:center;background:var(--secondary);color:var(--text);padding:1.2rem;border-radius:10px;text-decoration:none;font-size:1.1rem;border:2px solid var(--accent);transition:all .3s ease;opacity:0;animation:fadeInUp .5s forwards}
+        .game-card:nth-child(1){animation-delay:.1s}.game-card:nth-child(2){animation-delay:.2s}.game-card:nth-child(3){animation-delay:.3s}.game-card:nth-child(4){animation-delay:.4s}.game-card:nth-child(5){animation-delay:.5s}.game-card:nth-child(6){animation-delay:.6s}.game-card:nth-child(7){animation-delay:.7s}.game-card:nth-child(8){animation-delay:.8s}
+        .game-card:hover{background:var(--hover);transform:translateY(-5px);box-shadow:0 8px 16px rgba(255,215,0,.3)}
+        .game-icon{width:30px;height:30px;object-fit:contain;margin-right:12px}
+        .community{text-align:center;margin:3rem 0;padding:2rem 1rem;background:rgba(30,42,68,.6);border-radius:10px}
+        .community h2{font-size:clamp(1.5rem,3vw,2.2rem);color:var(--accent);margin-bottom:1.5rem;font-weight:600;text-transform:uppercase}
+        .social-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+        .social-link{font-size:2.5rem;transition:transform .3s}.social-link:hover{transform:scale(1.2)}
+        .whatsapp{color:#25D366}.tiktok{color:#69C9D0}
+        .social-link:hover .whatsapp{color:#1ebe57}.social-link:hover .tiktok{color:#EE1D52}
+        @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        footer{text-align:center;padding:1.5rem;color:var(--footer-text);font-size:.9rem;border-top:1px solid rgba(255,215,0,.2);background-color:rgba(255,255,255,.7)}
+        @media(max-width:768px){.game-grid{grid-template-columns:1fr}.game-card{font-size:1rem;padding:1rem}.social-link{font-size:2rem}}
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" 
-             alt="Logo Kedai H" 
-             class="logo"
-             loading="lazy">
-        <h1>Kedai H - Pricelist Games</h1>
-    </header>
-    
-    <main>
-        <div class="game-grid">
-            <a href="mlbb.html" class="game-card">
-                <img src="https://raw.githubusercontent.com/hzbllh/games/80feffb50d134cafadad745f71af5d7e2f1354b7/unnamed.jpg" 
-                     alt="Mobile Legends" 
-                     class="game-icon"
-                     loading="lazy">
-                Mobile Legends
-            </a>
-            
-            <a href="mlbb-id.html" class="game-card">
-                <img src="https://raw.githubusercontent.com/hzbllh/games/80feffb50d134cafadad745f71af5d7e2f1354b7/unnamed.jpg" 
-                     alt="Mobile Legends ID" 
-                     class="game-icon"
-                     loading="lazy">
-                Mobile Legends ID
-            </a>
-            
-            <a href="mcgg.html" class="game-card">
-                <img src="https://raw.githubusercontent.com/hzbllh/games/refs/heads/main/magic-chess-2-768x768.jpg" 
-                     alt="Magic Chess" 
-                     class="game-icon"
-                     loading="lazy">
-                Magic Chess (MCGG)
-            </a>
-            
-            <a href="pubg.html" class="game-card">
-                <img src="https://raw.githubusercontent.com/hzbllh/games/cbc27b2820a2e606d2d052ee4cbfd35228232a05/unnamed.webp" 
-                     alt="PUBG Mobile" 
-                     class="game-icon"
-                     loading="lazy">
-                PUBG Mobile
-            </a>
-            
-            <a href="valorant.html" class="game-card">
-                <img src="https://raw.githubusercontent.com/hzbllh/games/cbc27b2820a2e606d2d052ee4cbfd35228232a05/1WQY5YfS_400x400.jpg" 
-                     alt="Valorant" 
-                     class="game-icon"
-                     loading="lazy">
-                Valorant
-            </a>
-            
-            <a href="genshin.html" class="game-card">
-                <img src="https://raw.githubusercontent.com/hzbllh/games/cfea4671a7c46227344e8fa67ebdce5ebf9944c3/unnamed%20(1).webp" 
-                     alt="Genshin Impact" 
-                     class="game-icon"
-                     loading="lazy">
-                Genshin Impact
-            </a>
-            
-            <a href="winrate.html" class="game-card">
-                <i class="fas fa-calculator game-icon"></i>
-                Kalkulator Winrate
-            </a>
-
-            <a href="ml-checker.html" class="game-card">
-                <i class="fas fa-search game-icon"></i>
-                ML Checker
-            </a>
+<header>
+    <img src="https://raw.githubusercontent.com/hzbllh/games/5d830487edd8f40dc38d6fefcfa2b211eb12f3ee/H_20250228_033418_0002.png" alt="Logo Kedai H" class="logo" loading="lazy">
+    <h1>Kedai H - Pricelist Games</h1>
+</header>
+<main>
+    <div class="game-grid">
+        <a href="mlbb.html" class="game-card"><img src="https://raw.githubusercontent.com/hzbllh/games/80feffb50d134cafadad745f71af5d7e2f1354b7/unnamed.jpg" alt="Mobile Legends" class="game-icon" loading="lazy">Mobile Legends</a>
+        <a href="mlbb-id.html" class="game-card"><img src="https://raw.githubusercontent.com/hzbllh/games/80feffb50d134cafadad745f71af5d7e2f1354b7/unnamed.jpg" alt="Mobile Legends ID" class="game-icon" loading="lazy">Mobile Legends ID</a>
+        <a href="mcgg.html" class="game-card"><img src="https://raw.githubusercontent.com/hzbllh/games/refs/heads/main/magic-chess-2-768x768.jpg" alt="Magic Chess" class="game-icon" loading="lazy">Magic Chess (MCGG)</a>
+        <a href="pubg.html" class="game-card"><img src="https://raw.githubusercontent.com/hzbllh/games/cbc27b2820a2e606d2d052ee4cbfd35228232a05/unnamed.webp" alt="PUBG Mobile" class="game-icon" loading="lazy">PUBG Mobile</a>
+        <a href="valorant.html" class="game-card"><img src="https://raw.githubusercontent.com/hzbllh/games/cbc27b2820a2e606d2d052ee4cbfd35228232a05/1WQY5YfS_400x400.jpg" alt="Valorant" class="game-icon" loading="lazy">Valorant</a>
+        <a href="genshin.html" class="game-card"><img src="https://raw.githubusercontent.com/hzbllh/games/cfea4671a7c46227344e8fa67ebdce5ebf9944c3/unnamed%20(1).webp" alt="Genshin Impact" class="game-icon" loading="lazy">Genshin Impact</a>
+        <a href="winrate.html" class="game-card"><i class="fas fa-calculator game-icon"></i>Kalkulator Winrate</a>
+        <a href="ml-checker.html" class="game-card"><i class="fas fa-search game-icon"></i>ML Checker</a>
+    </div>
+    <section class="community">
+        <h2>Join Komuniti Kami</h2>
+        <div class="social-links">
+            <a href="https://chat.whatsapp.com/IYzrlrjtP1L2jikkTdiSBX" class="social-link"><i class="fab fa-whatsapp whatsapp"></i></a>
+            <a href="https://www.tiktok.com/@hzbllh" class="social-link"><i class="fab fa-tiktok tiktok"></i></a>
         </div>
-        
-        <section class="community">
-            <h2>Join Komuniti Kami</h2>
-            <div class="social-links">
-                <a href="https://chat.whatsapp.com/IYzrlrjtP1L2jikkTdiSBX" class="social-link">
-                    <i class="fab fa-whatsapp whatsapp"></i>
-                </a>
-                <a href="https://www.tiktok.com/@hzbllh" class="social-link">
-                    <i class="fab fa-tiktok tiktok"></i>
-                </a>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 Kedai H. Hak Cipta Terpelihara.</p>
-    </footer>
+    </section>
+</main>
+<footer><p>&copy; 2025 Kedai H. Hak Cipta Terpelihara.</p></footer>
 </body>
 </html>
